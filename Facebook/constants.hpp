@@ -10,6 +10,10 @@
 #define constants_hpp
 
 #include <stdio.h>
+#include <iostream>
+//#include "string.h"
+using namespace std;
+
 
 #define NAME_MAX_SIZE 101
 #define STATUS_MAX_SIZE 501

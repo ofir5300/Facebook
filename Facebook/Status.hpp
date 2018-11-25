@@ -9,7 +9,6 @@
 #ifndef Status_hpp
 #define Status_hpp
 
-#include <stdio.h>
 #include "Date.hpp"
 #include "Time.hpp"
 #include "Fanpage.hpp"

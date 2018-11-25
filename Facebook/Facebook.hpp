@@ -9,13 +9,10 @@
 #ifndef Facebook_hpp
 #define Facebook_hpp
 
-#include <iostream>
 #include "constants.hpp"
 #include "Member.hpp"
 #include "Fanpage.hpp"
 #include "Status.hpp"
-
-using namespace std;
 
 class Facebook
 {
@@ -31,6 +28,8 @@ private:
 public:
     // Methods
     void displayMenu();
+    void runFunction(int funcNum);
+    
     bool addMember();
     bool addFanpage();
     bool addStatus();
@@ -39,7 +38,7 @@ public:
     bool pairFanToFanpage();
     void displayAllMembersAndFanpages();
     void displayAllMembers();
-    void exit();
+    void exitFacebook();
 };
 
 
