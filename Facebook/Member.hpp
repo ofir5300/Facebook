@@ -20,7 +20,7 @@ class Member
 private:
     //attributes
     char        name[NAME_MAX_SIZE];
-    Date        birthDate;
+    Date*        birthDate;
     Status**    statuses = nullptr;
     Member**    friends = nullptr;
     int         friendsCount = 0;
@@ -31,17 +31,47 @@ private:
     
     
 public:
+    //constructor
+    Member(char* name, Date birthDate)
+    {
+        strcpy(this->name, name);
+        this->birthDate = &birthDate;
+    }
+    
+    ~Member()
+    {
+        if(friendsCount != 0)
+        {
+            for(int i = 0 ; i < friendsCount; i++)
+            {
+                delete [] friends[i];
+            }
+            delete friends;
+            
+        }
+        
+        if(fanPagesCount != 0)
+        {
+            
+            
+        }
+        
+        if(statuses)    // != nullptr
+        {
+            
+        }
+    }
     //methods
-    const Status**      getStatuses()           const;    // how shell we pass array of objects using ref
-    const Status**      getRecentStatuses()     const;    // using getStatuses() to fetch 10 recent statuses
-    const Status**      fetchFriendsStatuses()  const;
+    const Status**      getStatuses()            const;    // how shell we pass array of objects using ref
+    const Status**      getRecentStatuses()      const;    // using getStatuses() to fetch 10 recent statuses
+    const Status**      fetchFriendsStatuses()   const;
     bool                addFriend();
     bool                addFanPage();
-    Fanpage**           getFanPages()           const;
-    Member**            getFriends()            const;
-    char*               getName()               const;
-    Date&               getBirthDate()          const;
-    Status**            getFriensRecentStatuses const;
+    Fanpage**           getFanPages()             const;
+    Member**            getFriends()              const;
+    char*               getName()                   const;
+    Date&               getBirthDate()              const;
+    Status**            getFriensRecentStatuses()   const;
 };
 
 
@@ -49,3 +79,21 @@ public:
 
 
 #endif /* Member_hpp */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
