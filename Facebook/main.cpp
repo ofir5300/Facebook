@@ -6,7 +6,6 @@
 //  Copyright © 2018 Ilan Kushnir. All rights reserved.
 //
 
-#include <iostream>
 #include "Facebook.hpp"
 
 int main(int argc, const char * argv[]) {

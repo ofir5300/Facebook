@@ -9,7 +9,6 @@
 #ifndef Fanpage_hpp
 #define Fanpage_hpp
 
-#include <iostream>
 #include "constants.hpp"
 #include "Member.hpp"
 #include "Status.hpp"
@@ -28,6 +27,28 @@ private:
     int         statusesArrSize =0;
     
 public:
+    
+    Fanpage(char* name)
+    {
+        strcpy(this->name, name);
+    }
+    
+    ~Fanpage()
+    {
+        if (fansCount != 0) {
+            for (int i = 0; i < fansCount; i++) {
+                delete [](fans[i]);
+            }
+            delete []fans;
+        }
+        if (statusesCount != 0) {
+            for (int i = 0; i < statusesCount; i++) {
+                delete [](statuses[i]);
+            }
+            delete []statuses;
+        }
+    }
+    
     bool        addFan(const Member& fan);
     Member**    getFans()                   const;
     Status**    getStatuses()               const;

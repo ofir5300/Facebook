@@ -9,7 +9,6 @@
 #ifndef Member_hpp
 #define Member_hpp
 
-#include <stdio.h>
 #include "Date.hpp"
 #include "Time.hpp"
 #include "Status.hpp"
