@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6B9327A21AAD683008F5F35 /* Member.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327821AAD683008F5F35 /* Member.cpp */; };
+		D6B9327D21AAE248008F5F35 /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
+		D6B9328021AAE470008F5F35 /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
+		D6B9328321AAE576008F5F35 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
 		EFA7194821AAD588005A4F3C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194721AAD588005A4F3C /* main.cpp */; };
 		EFA7195021AAD65C005A4F3C /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
 		EFA7195321AAD8EF005A4F3C /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
@@ -25,6 +29,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D6B9327821AAD683008F5F35 /* Member.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Member.cpp; sourceTree = "<group>"; };
+		D6B9327921AAD683008F5F35 /* Member.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Member.hpp; sourceTree = "<group>"; };
+		D6B9327B21AAE248008F5F35 /* Status.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Status.cpp; sourceTree = "<group>"; };
+		D6B9327C21AAE248008F5F35 /* Status.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Status.hpp; sourceTree = "<group>"; };
+		D6B9327E21AAE470008F5F35 /* Date.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Date.cpp; sourceTree = "<group>"; };
+		D6B9327F21AAE470008F5F35 /* Date.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Date.hpp; sourceTree = "<group>"; };
+		D6B9328121AAE576008F5F35 /* Time.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Time.cpp; sourceTree = "<group>"; };
+		D6B9328221AAE576008F5F35 /* Time.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Time.hpp; sourceTree = "<group>"; };
 		EFA7194421AAD588005A4F3C /* Facebook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Facebook; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA7194721AAD588005A4F3C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EFA7194E21AAD65C005A4F3C /* Facebook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Facebook.cpp; sourceTree = "<group>"; };
@@ -65,7 +77,15 @@
 			isa = PBXGroup;
 			children = (
 				EFA7194721AAD588005A4F3C /* main.cpp */,
+				D6B9327821AAD683008F5F35 /* Member.cpp */,
+				D6B9327921AAD683008F5F35 /* Member.hpp */,
 				EFA7194E21AAD65C005A4F3C /* Facebook.cpp */,
+				D6B9327B21AAE248008F5F35 /* Status.cpp */,
+				D6B9327C21AAE248008F5F35 /* Status.hpp */,
+				D6B9327E21AAE470008F5F35 /* Date.cpp */,
+				D6B9327F21AAE470008F5F35 /* Date.hpp */,
+				D6B9328121AAE576008F5F35 /* Time.cpp */,
+				D6B9328221AAE576008F5F35 /* Time.hpp */,
 				EFA7194F21AAD65C005A4F3C /* Facebook.hpp */,
 				EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */,
 				EFA7195221AAD8EF005A4F3C /* Fanpage.hpp */,
@@ -130,9 +150,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B9328321AAE576008F5F35 /* Time.cpp in Sources */,
 				EFA7194821AAD588005A4F3C /* main.cpp in Sources */,
+				D6B9327A21AAD683008F5F35 /* Member.cpp in Sources */,
 				EFA7195021AAD65C005A4F3C /* Facebook.cpp in Sources */,
+
+				D6B9327D21AAE248008F5F35 /* Status.cpp in Sources */,
+				D6B9328021AAE470008F5F35 /* Date.cpp in Sources */,
+
 				EFA7195321AAD8EF005A4F3C /* Fanpage.cpp in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
