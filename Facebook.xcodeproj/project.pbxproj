@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EFA7194821AAD588005A4F3C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194721AAD588005A4F3C /* main.cpp */; };
+		EFA7195021AAD65C005A4F3C /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		EFA7194421AAD588005A4F3C /* Facebook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Facebook; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA7194721AAD588005A4F3C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EFA7194E21AAD65C005A4F3C /* Facebook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Facebook.cpp; sourceTree = "<group>"; };
+		EFA7194F21AAD65C005A4F3C /* Facebook.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Facebook.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				EFA7194721AAD588005A4F3C /* main.cpp */,
+				EFA7194E21AAD65C005A4F3C /* Facebook.cpp */,
+				EFA7194F21AAD65C005A4F3C /* Facebook.hpp */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA7194821AAD588005A4F3C /* main.cpp in Sources */,
+				EFA7195021AAD65C005A4F3C /* Facebook.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
