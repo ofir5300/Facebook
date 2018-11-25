@@ -20,6 +20,7 @@ using namespace std;
 class Facebook
 {
 private:
+    // Attributes
     Member**    members = nullptr;
     int         membersCount = 0;
     int         membersArrSize = 0;
@@ -28,6 +29,7 @@ private:
     int         fanpageArrSize = 0;
     
 public:
+    // Methods
     void displayMenu();
     bool addMember();
     bool addFanpage();

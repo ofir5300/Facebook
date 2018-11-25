@@ -14,12 +14,12 @@
 class Date
 {
 private:
-    //attributes
+    // Attributes
     int day;
     int month;
     int year;
 public:
-    //methods
+    // Methods
     int     getDay()        const;
     int     getMonth()      const;
     int     getYear()       const;

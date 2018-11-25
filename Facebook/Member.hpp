@@ -20,8 +20,10 @@ class Member
 private:
     //attributes
     char        name[NAME_MAX_SIZE];
-    Date*        birthDate;
+    Date*       birthDate;
     Status**    statuses = nullptr;
+    int         statusesCount = 0;
+    int         statusesArrSize = 0;
     Member**    friends = nullptr;
     int         friendsCount = 0;
     int         friendsArrSize = 0;
@@ -31,7 +33,7 @@ private:
     
     
 public:
-    //constructor
+    // Constructor, Distructor
     Member(char* name, Date birthDate)
     {
         strcpy(this->name, name);
@@ -47,21 +49,27 @@ public:
                 delete [] friends[i];
             }
             delete friends;
-            
         }
         
         if(fanPagesCount != 0)
         {
-            
-            
+            for(int i = 0 ; i < fanPagesCount; i++)
+            {
+                delete [] fanPages[i];
+            }
+            delete fanPages;
         }
         
-        if(statuses)    // != nullptr
+        if(statusesCount != 0)    // != nullptr
         {
-            
+            for(int i = 0 ; i < statusesCount; i++)
+            {
+                delete [] statuses[i];
+            }
+            delete statuses;
         }
     }
-    //methods
+    // Methods
     const Status**      getStatuses()            const;    // how shell we pass array of objects using ref
     const Status**      getRecentStatuses()      const;    // using getStatuses() to fetch 10 recent statuses
     const Status**      fetchFriendsStatuses()   const;

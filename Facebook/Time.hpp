@@ -14,12 +14,12 @@
 class Time
 {
 private:
-    //attributes
+    // Attributes
     int     minutes = 0;
     int     hours = 0;
     
 public:
-    //methods
+    // Methods
     int     getMinutes()    const;
     int     getHours()      const;
     char*   getTimeStr()    const;
