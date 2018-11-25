@@ -13,6 +13,7 @@
 		D6B9328321AAE576008F5F35 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
 		EFA7194821AAD588005A4F3C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194721AAD588005A4F3C /* main.cpp */; };
 		EFA7195021AAD65C005A4F3C /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
+		EFA7195321AAD8EF005A4F3C /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,9 @@
 		EFA7194721AAD588005A4F3C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EFA7194E21AAD65C005A4F3C /* Facebook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Facebook.cpp; sourceTree = "<group>"; };
 		EFA7194F21AAD65C005A4F3C /* Facebook.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Facebook.hpp; sourceTree = "<group>"; };
+		EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Fanpage.cpp; sourceTree = "<group>"; };
+		EFA7195221AAD8EF005A4F3C /* Fanpage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Fanpage.hpp; sourceTree = "<group>"; };
+		EFA7195521AADA3D005A4F3C /* constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = constants.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,9 @@
 				D6B9328121AAE576008F5F35 /* Time.cpp */,
 				D6B9328221AAE576008F5F35 /* Time.hpp */,
 				EFA7194F21AAD65C005A4F3C /* Facebook.hpp */,
+				EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */,
+				EFA7195221AAD8EF005A4F3C /* Fanpage.hpp */,
+				EFA7195521AADA3D005A4F3C /* constants.hpp */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";
@@ -147,8 +154,12 @@
 				EFA7194821AAD588005A4F3C /* main.cpp in Sources */,
 				D6B9327A21AAD683008F5F35 /* Member.cpp in Sources */,
 				EFA7195021AAD65C005A4F3C /* Facebook.cpp in Sources */,
+
 				D6B9327D21AAE248008F5F35 /* Status.cpp in Sources */,
 				D6B9328021AAE470008F5F35 /* Date.cpp in Sources */,
+
+				EFA7195321AAD8EF005A4F3C /* Fanpage.cpp in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
