@@ -13,17 +13,17 @@ bool Fanpage::addFan(const Member& fan)
     ///////////////////////
 }
 
-Member** Fanpage::getFans()
+Member** Fanpage::getFans() const
 {
     return fans;
 }
 
-Status** Fanpage::getStatuses()
+Status** Fanpage::getStatuses() const
 {
     return statuses;
 }
 
-char* Fanpage::getName()
+char* Fanpage::getName() const
 {
     return name;
 }

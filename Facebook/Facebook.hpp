@@ -28,7 +28,10 @@ private:
     int         fanpageArrSize = 0;
     
 public:
+    
     void displayMenu();
+    void runFunction(int funcNum);
+    
     bool addMember();
     bool addFanpage();
     bool addStatus();
@@ -37,7 +40,7 @@ public:
     bool pairFanToFanpage();
     void displayAllMembersAndFanpages();
     void displayAllMembers();
-    void exit();
+    void exitFacebook();
 };
 
 

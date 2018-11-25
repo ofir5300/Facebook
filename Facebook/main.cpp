@@ -7,9 +7,20 @@
 //
 
 #include <iostream>
+#include "Facebook.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    int input = 0;
+    Facebook fb;
+    
+    cout << "Welcome to Facebook! \n";
+    fb.displayMenu();
+    
+    do {
+        cin >> input;
+        fb.runFunction(input);
+    } while (input != 9);
+    
     return 0;
 }
