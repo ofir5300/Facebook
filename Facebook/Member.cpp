@@ -101,7 +101,7 @@ Member**  Member:: getFriends() const
     return friends;
 }
 
-char* Member:: getName() const
+char* Member:: getName()
 {
     return name;
 }
