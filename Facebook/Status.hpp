@@ -13,20 +13,39 @@
 #include "Time.hpp"
 #include "Fanpage.hpp"
 
+
 class Status
 {
 private:
     // Attributes
     Date    date;
     Time    time;
-    enum    type;
+    enum    type {Text, Image, Video};
     char    content[STATUS_MAX_SIZE] = "";
 public:
     // Methods
-    Date&   getDate()       const;
-    Time&   getTime()       const;
-    enum    getType()       const;
-    char*   getContent()    const;
+    Status(enum type, char* content)
+    {
+        this.date = new Date();
+        this.time = new Time();
+        this.type = type;
+        strcpy(this.content, content);
+        
+    }
+    const Date&   getDate()       const;
+    const Time&   getTime()       const;
+    const enum    getType()       const;        /////// add swich -std=c++11 ? 
+    const char*   getContent()    const;
 };
 
 #endif /* Status_hpp */
+
+
+
+
+
+
+
+
+
+

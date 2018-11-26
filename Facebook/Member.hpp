@@ -69,15 +69,15 @@ public:
         }
     }
     // Methods
-    const Status**      getStatuses()            const;    // how shell we pass array of objects using ref
+    const Status**      getStatuses()            const;
     int                 getStatusesCount();
-    const Status**      getRecentStatuses()      const;    // using getStatuses() to fetch 10 recent statuses
+    const Status**      getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
     const Status**      fetchFriendsStatuses()   const;
     bool                addFriend(const Member* newFriend);
     bool                addFanPage(const Fanpage* newFanPage);
     Fanpage**           getFanPages()             const;
     Member**            getFriends()              const;
-    char*               getName()                   const;
+    char*               getName();
     Date*               getBirthDate()              const;
 };
 
