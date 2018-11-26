@@ -18,7 +18,7 @@ class Member
 {
 private:
     //attributes
-    char        name[NAME_MAX_SIZE];
+    char        name [NAME_MAX_SIZE];
     Date*       birthDate;
     Status**    statuses = nullptr;
     int         statusesCount = 0;
@@ -28,7 +28,7 @@ private:
     int         friendsArrSize = 0;
     Fanpage**   fanPages = nullptr;
     int         fanPagesCount = 0;
-    int         fanPageArrSize = 0;
+    int         fanPagesArrSize = 0;
     
     
 public:
@@ -70,15 +70,15 @@ public:
     }
     // Methods
     const Status**      getStatuses()            const;    // how shell we pass array of objects using ref
+    int                 getStatusesCount();
     const Status**      getRecentStatuses()      const;    // using getStatuses() to fetch 10 recent statuses
     const Status**      fetchFriendsStatuses()   const;
-    bool                addFriend();
-    bool                addFanPage();
+    bool                addFriend(const Member* newFriend);
+    bool                addFanPage(const Fanpage* newFanPage);
     Fanpage**           getFanPages()             const;
     Member**            getFriends()              const;
     char*               getName()                   const;
-    Date&               getBirthDate()              const;
-    Status**            getFriensRecentStatuses()   const;
+    Date*               getBirthDate()              const;
 };
 
 
