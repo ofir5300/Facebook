@@ -19,7 +19,7 @@ class Member
 private:
     //attributes
     char        name[NAME_MAX_SIZE];
-    Date*        birthDate;
+    Date*       birthDate;
     Status**    statuses = nullptr;
     Member**    friends = nullptr;
     int         friendsCount = 0;

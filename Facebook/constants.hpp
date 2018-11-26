@@ -18,5 +18,6 @@ using namespace std;
 #define NAME_MAX_SIZE 101
 #define STATUS_MAX_SIZE 501
 #define RECENT_STATUSES 10
+#define INITIAL_ARR_DYNAMIC_SIZE 10
 
 #endif /* constants_hpp */

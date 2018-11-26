@@ -27,7 +27,7 @@ private:
     int         statusesArrSize =0;
     
 public:
-    
+    //constructors
     Fanpage(char* name)
     {
         strcpy(this->name, name);
@@ -49,7 +49,7 @@ public:
         }
     }
     
-    bool        addFan(const Member& fan);
+    bool        addFan(Member* fan);
     Member**    getFans()                   const;
     Status**    getStatuses()               const;
     char*       getName()                   const;
