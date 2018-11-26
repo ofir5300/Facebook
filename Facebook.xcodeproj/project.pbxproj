@@ -13,6 +13,12 @@
 		D6B9328621AC213A008F5F35 /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
 		D6B9328721AC213E008F5F35 /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
 		D6B9328821AC2147008F5F35 /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
+		EFA7195721AC2114005A4F3C /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
+		EFA7195821AC2122005A4F3C /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
+		EFA7195921AC2126005A4F3C /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
+		EFA7195A21AC2129005A4F3C /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
+		EFA7195B21AC212C005A4F3C /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
+		EFA7195C21AC2131005A4F3C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194721AAD588005A4F3C /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,16 +82,16 @@
 			isa = PBXGroup;
 			children = (
 				EFA7194721AAD588005A4F3C /* main.cpp */,
+				EFA7194E21AAD65C005A4F3C /* Facebook.cpp */,
+				EFA7194F21AAD65C005A4F3C /* Facebook.hpp */,
 				D6B9327821AAD683008F5F35 /* Member.cpp */,
 				D6B9327921AAD683008F5F35 /* Member.hpp */,
-				EFA7194E21AAD65C005A4F3C /* Facebook.cpp */,
 				D6B9327B21AAE248008F5F35 /* Status.cpp */,
 				D6B9327C21AAE248008F5F35 /* Status.hpp */,
 				D6B9327E21AAE470008F5F35 /* Date.cpp */,
 				D6B9327F21AAE470008F5F35 /* Date.hpp */,
 				D6B9328121AAE576008F5F35 /* Time.cpp */,
 				D6B9328221AAE576008F5F35 /* Time.hpp */,
-				EFA7194F21AAD65C005A4F3C /* Facebook.hpp */,
 				EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */,
 				EFA7195221AAD8EF005A4F3C /* Fanpage.hpp */,
 				EFA7195521AADA3D005A4F3C /* constants.hpp */,
@@ -155,6 +161,13 @@
 				D6B9328821AC2147008F5F35 /* Facebook.cpp in Sources */,
 				D6B9328721AC213E008F5F35 /* Status.cpp in Sources */,
 				D6B9328621AC213A008F5F35 /* Date.cpp in Sources */,
+				EFA7195821AC2122005A4F3C /* Time.cpp in Sources */,
+				EFA7195721AC2114005A4F3C /* Fanpage.cpp in Sources */,
+				D6B9327A21AAD683008F5F35 /* Member.cpp in Sources */,
+				EFA7195B21AC212C005A4F3C /* Facebook.cpp in Sources */,
+				EFA7195C21AC2131005A4F3C /* main.cpp in Sources */,
+				EFA7195A21AC2129005A4F3C /* Status.cpp in Sources */,
+				EFA7195921AC2126005A4F3C /* Date.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

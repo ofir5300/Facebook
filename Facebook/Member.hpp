@@ -18,7 +18,7 @@ class Member
 {
 private:
     //attributes
-    char        name [NAME_MAX_SIZE];
+    char        name[NAME_MAX_SIZE];
     Date*       birthDate;
     Status**    statuses = nullptr;
     int         statusesCount = 0;
