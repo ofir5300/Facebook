@@ -16,13 +16,13 @@
 class Status
 {
 private:
-    //attributes
+    // Attributes
     Date    date;
     Time    time;
     enum    type;
     char    content[STATUS_MAX_SIZE] = "";
 public:
-    //methods
+    // Methods
     Date&   getDate()       const;
     Time&   getTime()       const;
     enum    getType()       const;

@@ -14,7 +14,7 @@
 class Date
 {
 private:
-    //attributes
+    // Attributes
     int day;
     int month;
     int year;

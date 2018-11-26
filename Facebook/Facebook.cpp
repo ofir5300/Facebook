@@ -58,4 +58,5 @@ void Facebook::runFunction(int funcNum)
             cout << "Wrong input\n";
             break;
     }
+    
 }
