@@ -8,7 +8,7 @@
 
 #include "Date.hpp"
 
-char* Date::fixInput(char* dateStr)
+char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
 {
     int day, month, year, length = (int)strlen(dateStr), badInput = 0;
     
@@ -48,3 +48,5 @@ char* Date::fixInput(char* dateStr)
     
     return dateStr;
 }
+
+

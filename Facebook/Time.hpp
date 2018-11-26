@@ -9,20 +9,55 @@
 #ifndef Time_hpp
 #define Time_hpp
 
-#include <stdio.h>
+#include "constants.hpp"
 
 class Time
 {
 private:
     // Attributes
-    int     minutes = 0;
     int     hours = 0;
+    int     minutes = 0;
+    int     seconds = 0;
+    char    timeStr[9];
     
 public:
+    // Constructors
+    Time()
+    {
+        int nowHours, nowMinutes, nowSeconds;
+        
+        time_t t = time(0);   // get time now
+        tm* now = localtime(&t);
+        
+        nowHours = now->tm_hour;
+        nowMinutes = now->tm_min;
+        nowSeconds = now->tm_sec;
+        
+        Time(nowHours, nowMinutes, nowSeconds);
+    }
+    
+    Time(int hours, int minutes, int seconds)
+    {
+        this->hours = hours;
+        this->minutes = minutes;
+        this->seconds = seconds;
+        
+        timeStr[0] = hours / 10;
+        timeStr[1] = hours % 10;
+        timeStr[2] = ':';
+        timeStr[3] = minutes / 10;
+        timeStr[4] = minutes % 10;
+        timeStr[5] = ':';
+        timeStr[6] = seconds / 10;
+        timeStr[7] = seconds % 10;
+        timeStr[8] = '\n';
+    }
+    
     // Methods
-    int     getMinutes()    const;
-    int     getHours()      const;
-    char*   getTimeStr()    const;
+    int     getHours()      const   {return hours;}
+    int     getMinutes()    const   {return minutes;}
+    int     getSeconds()    const   {return seconds;}
+    char*   getTimeStr()            {return timeStr;}
 };
 
 #endif /* Time_hpp */
