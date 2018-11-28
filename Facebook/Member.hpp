@@ -47,21 +47,21 @@ public:
     {
         if(friendsCount != 0)
         {
-            delete friends;
+            delete []friends;
         }
         
         if(fanPagesCount != 0)
         {
-            delete fanPages;
+            delete []fanPages;
         }
         
         if(statusesCount != 0)
         {
             for(int i = 0 ; i < statusesCount; i++)
             {
-                delete [] statuses[i];
+                delete statuses[i];
             }
-            delete statuses;
+            delete []statuses;
         }
     }
     // Methods
@@ -69,8 +69,9 @@ public:
     int                 getStatusesCount();
     Status**            getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
     Status**            fetchFriendsStatuses()   const;
-    bool                addFriend(const Member* newFriend);
-    bool                addFanPage(const Fanpage* newFanPage);
+    bool                addFriend(Member* newFriend);
+    bool                addFanPage(Fanpage* newFanPage);
+    bool                addStatus(Status* newStatus);
     Fanpage**           getFanPages()      const;
     Member**            getFriends()       const;
     char*               getName();

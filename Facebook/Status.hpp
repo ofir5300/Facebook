@@ -9,6 +9,7 @@
 #ifndef Status_hpp
 #define Status_hpp
 
+#include "constants.hpp"
 #include "Date.hpp"
 #include "Time.hpp"
 //#include "Fanpage.hpp"
@@ -16,8 +17,6 @@
 class Date;
 
 class Fanpage;
-
-enum type {Text = 1, Image = 2, Video = 3};
 
 class Status
 {

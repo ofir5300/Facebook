@@ -39,14 +39,11 @@ public:
     ~Fanpage()
     {
         if (fansCount != 0) {
-            for (int i = 0; i < fansCount; i++) {
-                delete [](fans[i]);
-            }
             delete []fans;
         }
         if (statusesCount != 0) {
             for (int i = 0; i < statusesCount; i++) {
-                delete [](statuses[i]);
+                delete statuses[i];
             }
             delete []statuses;
         }
@@ -55,9 +52,10 @@ public:
     bool        addFan(Member* fan);
     Member**    getFans()                   const;
     Status**    getStatuses()               const;
-    char*       getName()                   ;
+    char*       getName();
     int         getStatusesCount()          const;
     void        printFanpage()              const;
+    bool        addStatus(Status* newStatus);
 };
 
 #endif /* Fanpage_hpp */
