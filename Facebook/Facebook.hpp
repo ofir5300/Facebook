@@ -39,6 +39,9 @@ public:
     void displayAllMembersAndFanpages();
     void displayAllMembers();
     void exitFacebook();
+
+    Member*     findMember(char* name);
+    Fanpage*    findFanpage(char* name);
 };
 
 

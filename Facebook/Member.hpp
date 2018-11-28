@@ -17,6 +17,7 @@
 //class Status;   // forward declaration
 //class Fanpage;
 
+
 class Member
 {
 private:
