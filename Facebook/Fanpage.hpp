@@ -11,10 +11,10 @@
 
 #include "constants.hpp"
 //#include "Member.hpp"
-#include "Status.hpp"
+//#include "Status.hpp"
 
 class Member;
-//class Status;
+class Status;
 
 using namespace std;
 

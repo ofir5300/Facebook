@@ -12,9 +12,9 @@
 #include "constants.hpp"
 #include "Date.hpp"
 #include "Time.hpp"
-//#include "Fanpage.hpp"
+#include "Fanpage.hpp"
 
-class Date;
+//class Date;
 
 class Fanpage;
 
@@ -22,22 +22,22 @@ class Status
 {
 private:
     // Attributes
-    Date    date;
-    Time    time;
+    Date*    date;
+    Time*    time;
     type    contentType;
     char    content[STATUS_MAX_SIZE] = "";
 public:
     // Methods
     Status(type contentType, char* content)
     {
-        this->date = Date();
-        this->time = Time();
+        this->date = new Date();
+        this->time = new Time();
         this->contentType = contentType;
         strcpy(this->content, content);
     }
-    const Date&   getDate()       const;
-    const Time&   getTime()       const;
-    const type    getType()       const;        /////// add swich -std=c++11 ?
+    const Date*   getDate()       const {return date;}
+    const Time*   getTime()       const {return time;}
+    const type    getType()       const {return contentType;}
     const char*   getContent()    const;
     void          printStatus()   const;
 };
