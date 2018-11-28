@@ -75,7 +75,7 @@ public:
     int     getDay()        const   {return day;}
     int     getMonth()      const   {return month;}
     int     getYear()       const   {return year;}
-    char*   getDateStr()            {return dateStr;}
+    char*   getDateStr()       {return dateStr;}
     char*   fixInput(char* dateStr);
 };
 

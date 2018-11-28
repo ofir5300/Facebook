@@ -29,7 +29,7 @@ public:
     // Methods
     void displayMenu();
     void runFunction(int funcNum);
-    
+
     bool addMember();
     bool addFanpage();
     bool addStatus();
@@ -39,10 +39,24 @@ public:
     void displayAllMembersAndFanpages();
     void displayAllMembers();
     void exitFacebook();
-    
+
     Member*     findMember(char* name);
     Fanpage*    findFanpage(char* name);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #endif /* Facebook_hpp */

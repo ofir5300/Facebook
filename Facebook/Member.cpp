@@ -109,6 +109,22 @@ Date* Member:: getBirthDate() const
     return birthDate;
 }
 
+
+void Member:: printMember() const
+{
+    cout << "Member Name: " << name
+    << "Birth Date: " << birthDate->getDateStr() << " /n";
+}
+
+
+
+
+
+
+
+
+
+
 bool Member::addStatus(Status* newStatus)
 {
     if (statuses == nullptr) {
@@ -128,6 +144,7 @@ bool Member::addStatus(Status* newStatus)
     statuses[statusesCount++] = newStatus;
     return true;
 }
+
 
 
 

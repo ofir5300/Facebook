@@ -59,7 +59,78 @@ void Facebook::runFunction(int funcNum)
             break;
     }
     
+
 }
+
+
+void Facebook:: displayStatuses()
+{
+    int choice = 0;
+    char name[NAME_MAX_SIZE];
+    
+    while (choice != 1 || choice != 2)
+    {
+        cout << "Do you want to display the statuses of a memeber or a fanpage?\n"
+        << "1) Member\n"
+        << "2) Fanpage\n";
+        cin >> choice;
+    }
+    
+    if(choice == 1)
+    {
+        do
+        {
+            cout << "Please enter member name" ;
+            cin >> name;
+        }
+        while(findMember(name) == nullptr);
+        
+        Member* member = findMember(name);
+        Status** statuses = member->getStatuses();
+        
+        for(int i = 0 ; i < member->getStatusesCount() ; i++)
+        {
+            statuses[i]->printStatus();
+        }
+    }
+    else
+    {
+        do
+        {
+            cout << "Please enter fanpage name" ;
+            cin >> name;
+        }
+        while(findFanpage(name) == nullptr);
+        
+        Fanpage* fanpage = findFanpage(name);
+        Status** statuses = fanpage->getStatuses();
+        
+        for(int i = 0 ; i < fanpage->getStatusesCount() ; i++)
+        {
+            statuses[i]->printStatus();
+        }
+    }
+}
+
+void Facebook:: displayAllMembers()
+{
+    for(int i = 0 ; i < membersCount; i++)
+    {
+        members[i]->printMember();
+    }
+    
+}
+
+void Facebook:: displayAllMembersAndFanpages()
+{
+    displayAllMembers();
+    
+    for(int i = 0 ; i < fanpageCount ; i++)
+    {
+        fanpages[i]->printFanpage();
+    }
+}
+
 
 bool Facebook::addMember()
 {
@@ -179,6 +250,30 @@ bool Facebook::addStatus()
     }
     
     return false;
+}
+
+Member* Facebook::findMember(char* name)
+{
+    for (int i = 0; i < membersCount; i++) {
+        if (strcmp(name, members[i]->getName()) == 0) {
+            return members[i];
+        }
+    }
+    
+    cout << "Member not found";
+    return nullptr;
+}
+
+Fanpage* Facebook::findFanpage(char* name)
+{
+    for (int i = 0; i < fanpageCount; i++) {
+        if (strcmp(name, fanpages[i]->getName()) == 0) {
+            return fanpages[i];
+        }
+    }
+    
+    cout << "Fanpage not found";
+    return nullptr;
 }
 
 bool Facebook::pair2Members()
