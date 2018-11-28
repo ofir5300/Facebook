@@ -14,8 +14,9 @@
 #include "Status.hpp"
 #include "Fanpage.hpp"
 
-class Status;   // forward declaration
-class Fanpage;
+//class Status;   // forward declaration
+//class Fanpage;
+
 
 class Member
 {
@@ -46,23 +47,15 @@ public:
     {
         if(friendsCount != 0)
         {
-            for(int i = 0 ; i < friendsCount; i++)
-            {
-                delete [] friends[i];
-            }
             delete friends;
         }
         
         if(fanPagesCount != 0)
         {
-            for(int i = 0 ; i < fanPagesCount; i++)
-            {
-                delete [] fanPages[i];
-            }
             delete fanPages;
         }
         
-        if(statusesCount != 0)    // != nullptr
+        if(statusesCount != 0)
         {
             for(int i = 0 ; i < statusesCount; i++)
             {
@@ -72,16 +65,16 @@ public:
         }
     }
     // Methods
-    const Status**      getStatuses()            const;
+    Status**      getStatuses()            const;
     int                 getStatusesCount();
-    const Status**      getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
-    const Status**      fetchFriendsStatuses()   const;
+    Status**      getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
+    Status**      fetchFriendsStatuses()   const;
     bool                addFriend(const Member* newFriend);
     bool                addFanPage(const Fanpage* newFanPage);
-    Fanpage**           getFanPages()             const;
-    Member**            getFriends()              const;
+    Fanpage**           getFanPages()      const;
+    Member**            getFriends()       const;
     char*               getName();
-    Date*               getBirthDate()              const;
+    Date*               getBirthDate()     const;
 };
 
 
