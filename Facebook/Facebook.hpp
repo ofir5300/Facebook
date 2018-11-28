@@ -29,16 +29,19 @@ public:
     // Methods
     void displayMenu();
     void runFunction(int funcNum);
-
-//    bool addMember();
-//    bool addFanpage();
-//    bool addStatus();
-//    void displayStatuses();
-//    bool pair2Members();
-//    bool pairFanToFanpage();
-//    void displayAllMembersAndFanpages();
-//    void displayAllMembers();
-//    void exitFacebook();
+    
+    bool addMember();
+    bool addFanpage();
+    bool addStatus();
+    void displayStatuses();
+    bool pair2Members();
+    bool pairFanToFanpage();
+    void displayAllMembersAndFanpages();
+    void displayAllMembers();
+    void exitFacebook();
+    
+    Member*     findMember(char* name);
+    Fanpage*    findFanpage(char* name);
 };
 
 
