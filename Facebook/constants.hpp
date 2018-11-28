@@ -14,6 +14,7 @@
 //#include "string.h"
 using namespace std;
 
+enum type {Text = 1, Image = 2, Video = 3};
 
 #define NAME_MAX_SIZE 101
 #define STATUS_MAX_SIZE 501

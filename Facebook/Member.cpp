@@ -10,7 +10,7 @@
 
 Status** Member:: getStatuses() const
 {
-    return (const Status**)statuses;
+    return (Status**)statuses;
 }
 
 int Member:: getStatusesCount()
@@ -26,7 +26,7 @@ Status** Member:: getRecentStatuses() const
         recent[i] = statuses[i];
     }
     
-    return (const Status**)recent;
+    return (Status**)recent;
 }
 
 Status** Member:: fetchFriendsStatuses() const
@@ -41,18 +41,16 @@ Status** Member:: fetchFriendsStatuses() const
     
     for(int i = 0 ; i < friendsCount; i++)
     {
-        const Status** recent = friends[i]->getRecentStatuses();
+        Status** recent = friends[i]->getRecentStatuses();
         for(int j = 0 ; j < RECENT_STATUSES && j < friends[i]->getStatusesCount(); j++)
         {
-            friendsStatuses[counter] = new Status;
-            friendsStatuses[counter++] =  recent[j]; //(friends[i]->getRecentStatuses())[j];
-            
+            friendsStatuses[counter++] =  recent[j];
         }
     }
-    return (const Status**)friendsStatuses;
+    return (Status**)friendsStatuses;
 }
         
-bool Member:: addFriend(const Member* newFriend)
+bool Member:: addFriend(Member* newFriend)
 {   // add an new member to 'friends' array
     
     if(!friendsCount)   // if array is empty
@@ -72,7 +70,7 @@ bool Member:: addFriend(const Member* newFriend)
     return true;
 }
         
-bool Member:: addFanPage(const Fanpage* newFanPage)
+bool Member:: addFanPage(Fanpage* newFanPage)
 {
     if(!fanPagesCount)
     {
@@ -111,14 +109,25 @@ Date* Member:: getBirthDate() const
     return birthDate;
 }
 
-
-
-
-
-
-
-
-
+bool Member::addStatus(Status* newStatus)
+{
+    if (statuses == nullptr) {
+        statuses = new Status* [INITIAL_ARR_DYNAMIC_SIZE];
+        statusesArrSize = INITIAL_ARR_DYNAMIC_SIZE;
+        statusesCount = 0;
+    }
+    else if (statusesCount == statusesArrSize)
+    {
+        Status** temp = statuses;
+        statusesArrSize *= 2;
+        statuses = new Status* [statusesArrSize];
+        memcpy(statuses, temp, sizeof(Status*) * statusesCount);
+        delete temp;
+    }
+    
+    statuses[statusesCount++] = newStatus;
+    return true;
+}
 
 
 

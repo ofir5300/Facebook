@@ -13,6 +13,7 @@
 		EFA7195F21AC5B33005A4F3C /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
 		EFA7196021AC5B35005A4F3C /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
 		EFA7196121AC5B3A005A4F3C /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
+		EFA7197C21AEF71F005A4F3C /* Member.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327821AAD683008F5F35 /* Member.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -150,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA7195E21AC5B30005A4F3C /* Time.cpp in Sources */,
+				EFA7197C21AEF71F005A4F3C /* Member.cpp in Sources */,
 				EFA7195D21AC5B2D005A4F3C /* Fanpage.cpp in Sources */,
 				EFA7195C21AC2131005A4F3C /* main.cpp in Sources */,
 				EFA7196121AC5B3A005A4F3C /* Facebook.cpp in Sources */,

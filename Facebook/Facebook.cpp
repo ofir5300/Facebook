@@ -25,40 +25,40 @@ void Facebook::displayMenu()
 
 void Facebook::runFunction(int funcNum)
 {
-//    switch (funcNum) {
-//        case 1:
-//            addMember();
-//            break;
-//        case 2:
-//            addFanpage();
-//            break;
-//        case 3:
-//            addStatus();
-//            break;
-//        case 4:
-//            displayStatuses();
-//            break;
-//        case 5:
-//            pair2Members();
-//            break;
-//        case 6:
-//            pairFanToFanpage();
-//            break;
-//        case 7:
-//            displayAllMembersAndFanpages();
-//            break;
-//        case 8:
-//            displayAllMembers();
-//            break;
-//        case 9:
-//            exitFacebook();
-//            break;
-//
-//        default:
-//            cout << "Wrong input\n";
-//            break;
-//    }
-//    
+    switch (funcNum) {
+        case 1:
+            addMember();
+            break;
+        case 2:
+            addFanpage();
+            break;
+        case 3:
+            addStatus();
+            break;
+        case 4:
+            displayStatuses();
+            break;
+        case 5:
+            pair2Members();
+            break;
+        case 6:
+            pairFanToFanpage();
+            break;
+        case 7:
+            displayAllMembersAndFanpages();
+            break;
+        case 8:
+            displayAllMembers();
+            break;
+        case 9:
+            exitFacebook();
+            break;
+
+        default:
+            cout << "Wrong input\n";
+            break;
+    }
+    
 }
 
 bool Facebook::addMember()
@@ -126,6 +126,8 @@ bool Facebook::addStatus()
     int statusType; //
     char status[STATUS_MAX_SIZE];
     char name[NAME_MAX_SIZE];
+    Member* member = nullptr;
+    Fanpage* fanpage = nullptr;
     
     while (choice != 1 || choice != 2) {
         cout << "Do you want to add the status to a memeber or to a fanpage?\n"
@@ -139,7 +141,7 @@ bool Facebook::addStatus()
     {
         cout << "Enter member's name:\n";
         cin >> name;
-        Member* member = findMember(name);
+        member = findMember(name);
         
         if (member == nullptr)
             return false;
@@ -148,7 +150,7 @@ bool Facebook::addStatus()
     {
         cout << "Enter fanpage's name:\n";
         cin >> name;
-        Fanpage* fanpage = findFanpage(name);
+        fanpage = findFanpage(name);
         
         if (fanpage == nullptr)
             return false;
@@ -163,9 +165,20 @@ bool Facebook::addStatus()
     cout << "Enter status:\n";
     cin >> status;
     
-    Status* newStatus = new Status(statusType, status);
-    ////////////////////////////////////////////////////
+    Status* newStatus = new Status((type)statusType, status);
     
+    if (choice == 1)
+    {
+        member->addStatus(newStatus);
+        return true;
+    }
+    else if (choice == 2)
+    {
+        fanpage->addStatus(newStatus);
+        return true;
+    }
+    
+    return false;
 }
 
 
@@ -193,4 +206,49 @@ Fanpage* Facebook::findFanpage(char* name)
     
     cout << "Fanpage not found";
     return nullptr;
+}
+
+bool Facebook::pair2Members()
+{
+    Member* m1 = nullptr, *m2 = nullptr;
+    char name1[NAME_MAX_SIZE], name2[NAME_MAX_SIZE];
+    
+    cout << "Please enter first member's name:\n";
+    cin >> name1;
+    
+    m1 = findMember(name1);
+    if (m1 == nullptr) {return false;}
+    
+    cout << "Please enter second member's name:\n";
+    cin >> name2;
+    
+    m2 = findMember(name2);
+    if (m2 == nullptr) {return false;}
+    
+    m1->addFriend(m2);
+    m2->addFriend(m1);
+    return true;
+}
+
+bool Facebook::pairFanToFanpage()
+{
+    Member* member = nullptr;
+    Fanpage* fanpage = nullptr;
+    char memberName[NAME_MAX_SIZE], fanpageName[NAME_MAX_SIZE];
+    
+    cout << "Please enter member's name:\n";
+    cin >> memberName;
+    
+    member = findMember(memberName);
+    if (member == nullptr) {return false;}
+    
+    cout << "Please enter fanpage's name:\n";
+    cin >> fanpageName;
+    
+    fanpage = findFanpage(fanpageName);
+    if (fanpage == nullptr) {return false;}
+    
+    member->addFanPage(fanpage);
+    fanpage->addFan(member);
+    return true;
 }

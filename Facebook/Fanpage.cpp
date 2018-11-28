@@ -42,3 +42,23 @@ char* Fanpage::getName()
 {
     return name;
 }
+
+bool Fanpage::addStatus(Status* newStatus)
+{
+    if (statuses == nullptr) {
+        statuses = new Status* [INITIAL_ARR_DYNAMIC_SIZE];
+        statusesArrSize = INITIAL_ARR_DYNAMIC_SIZE;
+        statusesCount = 0;
+    }
+    else if (statusesCount == statusesArrSize)
+    {
+        Status** temp = statuses;
+        statusesArrSize *= 2;
+        statuses = new Status* [statusesArrSize];
+        memcpy(statuses, temp, sizeof(Status*) * statusesCount);
+        delete temp;
+    }
+    
+    statuses[statusesCount++] = newStatus;
+    return true;
+}
