@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6950F6B21AEF73100B6C690 /* Member.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327821AAD683008F5F35 /* Member.cpp */; };
 		EFA7195C21AC2131005A4F3C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194721AAD588005A4F3C /* main.cpp */; };
 		EFA7195D21AC5B2D005A4F3C /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
 		EFA7195E21AC5B30005A4F3C /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
@@ -151,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA7195E21AC5B30005A4F3C /* Time.cpp in Sources */,
+				D6950F6B21AEF73100B6C690 /* Member.cpp in Sources */,
 				EFA7197C21AEF71F005A4F3C /* Member.cpp in Sources */,
 				EFA7195D21AC5B2D005A4F3C /* Fanpage.cpp in Sources */,
 				EFA7195C21AC2131005A4F3C /* main.cpp in Sources */,

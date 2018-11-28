@@ -28,3 +28,20 @@ const char* Status:: getContent() const
 {
     return content;
 }
+
+void Status:: printStatus() const                           ///////////////////
+{
+    cout << "Status posted on " << date.getDateStr << " " << time.getTimeStr
+         << "\n[" << contentType << "] : " << content;
+}
+
+
+
+
+
+
+
+
+
+
+
