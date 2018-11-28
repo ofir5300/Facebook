@@ -20,7 +20,7 @@ private:
     // Attributes
     Date    date;
     Time    time;
-    enum    type {Text, Image, Video};
+    enum    type {Text = 1, Image, Video};
     char    content[STATUS_MAX_SIZE] = "";
 public:
     // Methods

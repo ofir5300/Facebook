@@ -14,6 +14,9 @@
 #include "Status.hpp"
 #include "Fanpage.hpp"
 
+class Status;   // forward declaration
+class Fanpage;
+
 class Member
 {
 private:
@@ -33,10 +36,10 @@ private:
     
 public:
     // Constructor, Distructor
-    Member(char* name, Date birthDate)
+    Member(char* name, Date* birthDate)
     {
         strcpy(this->name, name);
-        this->birthDate = &birthDate;
+        this->birthDate = birthDate;
     }
     
     ~Member()
