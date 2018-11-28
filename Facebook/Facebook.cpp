@@ -25,38 +25,72 @@ void Facebook::displayMenu()
 
 void Facebook::runFunction(int funcNum)
 {
-//    switch (funcNum) {
-//        case 1:
-//            addMember();
-//            break;
-//        case 2:
-//            addFanpage();
-//            break;
-//        case 3:
-//            addStatus();
-//            break;
-//        case 4:
-//            displayStatuses();
-//            break;
-//        case 5:
-//            pair2Members();
-//            break;
-//        case 6:
-//            pairFanToFanpage();
-//            break;
-//        case 7:
-//            displayAllMembersAndFanpages();
-//            break;
-//        case 8:
-//            displayAllMembers();
-//            break;
-//        case 9:
-//            exitFacebook();
-//            break;
-//
-//        default:
-//            cout << "Wrong input\n";
-//            break;
-//    }
-//    
+    switch (funcNum) {
+        case 1:
+            addMember();
+            break;
+        case 2:
+            addFanpage();
+            break;
+        case 3:
+            addStatus();
+            break;
+        case 4:
+            displayStatuses();
+            break;
+        case 5:
+            pair2Members();
+            break;
+        case 6:
+            pairFanToFanpage();
+            break;
+        case 7:
+            displayAllMembersAndFanpages();
+            break;
+        case 8:
+            displayAllMembers();
+            break;
+        case 9:
+            exitFacebook();
+            break;
+
+        default:
+            cout << "Wrong input\n";
+            break;
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+void Facebook:: displayStatuses()
+{
+    cout << ""
+}
+
+void Facebook:: displayAllMembers()
+{
+    
+}
+
+void Facebook:: displayAllMembersAndFanpages()
+{
+    
+    
+}
+
+
+
+
+
+
+
+
+
