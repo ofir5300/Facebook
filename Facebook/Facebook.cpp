@@ -181,33 +181,6 @@ bool Facebook::addStatus()
     return false;
 }
 
-
-
-
-Member* Facebook::findMember(char* name)
-{
-    for (int i = 0; i < membersCount; i++) {
-        if (strcmp(name, members[i]->getName()) == 0) {
-            return members[i];
-        }
-    }
-    
-    cout << "Member not found";
-    return nullptr;
-}
-
-Fanpage* Facebook::findFanpage(char* name)
-{
-    for (int i = 0; i < fanpageCount; i++) {
-        if (strcmp(name, fanpages[i]->getName()) == 0) {
-            return fanpages[i];
-        }
-    }
-    
-    cout << "Fanpage not found";
-    return nullptr;
-}
-
 bool Facebook::pair2Members()
 {
     Member* m1 = nullptr, *m2 = nullptr;
@@ -251,4 +224,44 @@ bool Facebook::pairFanToFanpage()
     member->addFanPage(fanpage);
     fanpage->addFan(member);
     return true;
+}
+
+
+
+
+
+
+Member* Facebook::findMember(char* name)
+{
+    for (int i = 0; i < membersCount; i++) {
+        if (strcmp(name, members[i]->getName()) == 0) {
+            return members[i];
+        }
+    }
+    
+    cout << "Member not found";
+    return nullptr;
+}
+
+Fanpage* Facebook::findFanpage(char* name)
+{
+    for (int i = 0; i < fanpageCount; i++) {
+        if (strcmp(name, fanpages[i]->getName()) == 0) {
+            return fanpages[i];
+        }
+    }
+    
+    cout << "Fanpage not found";
+    return nullptr;
+}
+
+void Facebook::exitFacebook()
+{
+    for (int i = 0; i < membersCount; i++)
+        delete members[i];
+    for (int i = 0; i < fanpageCount; i++)
+        delete fanpages[i];
+    
+    delete members;
+    delete fanpages;
 }
