@@ -200,7 +200,7 @@ bool Facebook::addStatus()
     Member* member = nullptr;
     Fanpage* fanpage = nullptr;
     
-    while (choice != 1 || choice != 2) {
+    while (choice != 1 && choice != 2) {
         cout << "Do you want to add the status to a memeber or to a fanpage?\n"
         << "1) Member\n"
         << "2) Fanpage\n";
@@ -319,4 +319,15 @@ bool Facebook::pairFanToFanpage()
     member->addFanPage(fanpage);
     fanpage->addFan(member);
     return true;
+}
+
+void Facebook::exitFacebook()
+{
+    for (int i = 0; i < membersCount; i++)
+        delete members[i];
+    for (int i = 0; i < fanpageCount; i++)
+        delete fanpages[i];
+    
+    delete members;
+    delete fanpages;
 }
