@@ -111,6 +111,12 @@ Date* Member:: getBirthDate() const
     return birthDate;
 }
 
+void Member:: printMember() const
+{
+    cout << "Member Name: " << name
+    << "Birth Date: " << birthDate->getDateStr() << " /n";
+}
+
 
 
 

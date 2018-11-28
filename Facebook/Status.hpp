@@ -13,6 +13,8 @@
 #include "Time.hpp"
 //#include "Fanpage.hpp"
 
+class Date;
+
 class Fanpage;
 
 enum type {Text = 1, Image = 2, Video = 3};
@@ -33,12 +35,12 @@ public:
         this->time = Time();
         this->contentType = contentType;
         strcpy(this->content, content);
-        
     }
     const Date&   getDate()       const;
     const Time&   getTime()       const;
     const type    getType()       const;        /////// add swich -std=c++11 ?
     const char*   getContent()    const;
+    void          printStatus()   const;
 };
 
 #endif /* Status_hpp */

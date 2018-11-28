@@ -65,19 +65,18 @@ public:
         }
     }
     // Methods
-    Status**      getStatuses()            const;
+    Status**            getStatuses()            const;
     int                 getStatusesCount();
-    Status**      getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
-    Status**      fetchFriendsStatuses()   const;
+    Status**            getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
+    Status**            fetchFriendsStatuses()   const;
     bool                addFriend(const Member* newFriend);
     bool                addFanPage(const Fanpage* newFanPage);
     Fanpage**           getFanPages()      const;
     Member**            getFriends()       const;
     char*               getName();
     Date*               getBirthDate()     const;
+    void                printMember()      const;
 };
-
-
 
 
 

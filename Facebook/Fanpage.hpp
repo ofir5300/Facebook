@@ -56,6 +56,8 @@ public:
     Member**    getFans()                   const;
     Status**    getStatuses()               const;
     char*       getName()                   ;
+    int         getStatusesCount()          const;
+    void        printFanpage()              const;
 };
 
 #endif /* Fanpage_hpp */
