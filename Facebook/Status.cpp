@@ -31,7 +31,7 @@ const char* Status:: getContent() const
 
 void Status:: printStatus() const                           ///////////////////
 {
-    cout << "Status posted on " << date.getDateStr << " " << time.getTimeStr
+    cout << "Status posted on " << date. << " " << time.getTimeStr
          << "\n[" << contentType << "] : " << content;
 }
 

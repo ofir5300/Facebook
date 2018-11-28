@@ -200,7 +200,7 @@ bool Facebook::addStatus()
     Member* member = nullptr;
     Fanpage* fanpage = nullptr;
     
-    while (choice != 1 || choice != 2) {
+    while (choice != 1 && choice != 2) {
         cout << "Do you want to add the status to a memeber or to a fanpage?\n"
         << "1) Member\n"
         << "2) Fanpage\n";
@@ -319,35 +319,6 @@ bool Facebook::pairFanToFanpage()
     member->addFanPage(fanpage);
     fanpage->addFan(member);
     return true;
-}
-
-
-
-
-
-
-Member* Facebook::findMember(char* name)
-{
-    for (int i = 0; i < membersCount; i++) {
-        if (strcmp(name, members[i]->getName()) == 0) {
-            return members[i];
-        }
-    }
-    
-    cout << "Member not found";
-    return nullptr;
-}
-
-Fanpage* Facebook::findFanpage(char* name)
-{
-    for (int i = 0; i < fanpageCount; i++) {
-        if (strcmp(name, fanpages[i]->getName()) == 0) {
-            return fanpages[i];
-        }
-    }
-    
-    cout << "Fanpage not found";
-    return nullptr;
 }
 
 void Facebook::exitFacebook()
