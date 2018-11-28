@@ -10,8 +10,11 @@
 #define Fanpage_hpp
 
 #include "constants.hpp"
-#include "Member.hpp"
+//#include "Member.hpp"
 #include "Status.hpp"
+
+class Member;
+//class Status;
 
 using namespace std;
 
@@ -52,7 +55,7 @@ public:
     bool        addFan(Member* fan);
     Member**    getFans()                   const;
     Status**    getStatuses()               const;
-    char*       getName()                   const;
+    char*       getName()                   ;
 };
 
 #endif /* Fanpage_hpp */
