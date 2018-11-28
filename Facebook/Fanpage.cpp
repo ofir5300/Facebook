@@ -38,7 +38,7 @@ Status** Fanpage::getStatuses() const
     return statuses;
 }
 
-char* Fanpage::getName() const
+char* Fanpage::getName()
 {
     return name;
 }

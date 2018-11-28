@@ -19,9 +19,9 @@ const Time& Status:: getTime() const
     return time;
 }
 
-const enum Status:: getType() const
+const type Status:: getType() const
 {
-    return type;
+    return contentType;
 }
 
 const char* Status:: getContent() const

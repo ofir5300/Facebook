@@ -18,14 +18,48 @@ private:
     int day;
     int month;
     int year;
+    char dateStr[11];  //format: dd/mm/yyyy
 public:
     //constructors
+    
+    Date()
+    {
+        int nowDay, nowMonth, nowYear;
+        
+        time_t t = time(0);   // get time now
+        tm* now = localtime(&t);
+        
+        nowDay = now->tm_mday;
+        nowMonth = now->tm_mon + 1;
+        nowYear = now->tm_year + 1900;
+        
+        Date(nowDay, nowMonth, nowYear);
+    }
+    
+    Date(int day, int month, int year)
+    {
+        this->day = day;
+        this->month = month;
+        this->year = year;
+        
+        dateStr[0] = day/10;
+        dateStr[1] = day%10;
+        dateStr[2] = '/';
+        dateStr[3] = month/10;
+        dateStr[4] = month%10;
+        dateStr[5] = '/';
+        dateStr[6] = year / 1000;
+        dateStr[7] = (year % 1000) / 100;
+        dateStr[8] = (year % 100) / 10;
+        dateStr[9] = year % 10;
+        dateStr[10] = '\n';
+    }
+    
     Date(char* dateStr)
     {
-        //format dd/mm/yyyy
-        //       0123456789
-        
         fixInput(dateStr);
+        
+        strcpy(this->dateStr, dateStr);
         
         day = dateStr[1] + '0';
         day += (dateStr[0] + '0') * 10;
@@ -41,7 +75,7 @@ public:
     int     getDay()        const   {return day;}
     int     getMonth()      const   {return month;}
     int     getYear()       const   {return year;}
-    char*   getDateStr()    const;      ////////////////////
+    char*   getDateStr()            {return dateStr;}
     char*   fixInput(char* dateStr);
 };
 

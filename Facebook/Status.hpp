@@ -11,8 +11,11 @@
 
 #include "Date.hpp"
 #include "Time.hpp"
-#include "Fanpage.hpp"
+//#include "Fanpage.hpp"
 
+class Fanpage;
+
+enum type {Text = 1, Image = 2, Video = 3};
 
 class Status
 {
@@ -20,21 +23,21 @@ private:
     // Attributes
     Date    date;
     Time    time;
-    enum    type {Text, Image, Video};
+    type    contentType;
     char    content[STATUS_MAX_SIZE] = "";
 public:
     // Methods
-    Status(enum type, char* content)
+    Status(type contentType, char* content)
     {
-        this.date = new Date();
-        this.time = new Time();
-        this.type = type;
-        strcpy(this.content, content);
+        this->date = Date();
+        this->time = Time();
+        this->contentType = contentType;
+        strcpy(this->content, content);
         
     }
     const Date&   getDate()       const;
     const Time&   getTime()       const;
-    const enum    getType()       const;        /////// add swich -std=c++11 ? 
+    const type    getType()       const;        /////// add swich -std=c++11 ?
     const char*   getContent()    const;
 };
 

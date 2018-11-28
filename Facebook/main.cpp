@@ -12,10 +12,10 @@ int main(int argc, const char * argv[]) {
     
     int input = 0;
     Facebook fb;
-    
+
     cout << "Welcome to Facebook! \n";
     fb.displayMenu();
-    
+
     do {
         cin >> input;
         fb.runFunction(input);

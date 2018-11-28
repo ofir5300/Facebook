@@ -7,18 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6B9327A21AAD683008F5F35 /* Member.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327821AAD683008F5F35 /* Member.cpp */; };
-		D6B9328421AC20FA008F5F35 /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
-		D6B9328521AC2136008F5F35 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
-		D6B9328621AC213A008F5F35 /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
-		D6B9328721AC213E008F5F35 /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
-		D6B9328821AC2147008F5F35 /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
-		EFA7195721AC2114005A4F3C /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
-		EFA7195821AC2122005A4F3C /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
-		EFA7195921AC2126005A4F3C /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
-		EFA7195A21AC2129005A4F3C /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
-		EFA7195B21AC212C005A4F3C /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
 		EFA7195C21AC2131005A4F3C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194721AAD588005A4F3C /* main.cpp */; };
+		EFA7195D21AC5B2D005A4F3C /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
+		EFA7195E21AC5B30005A4F3C /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
+		EFA7195F21AC5B33005A4F3C /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
+		EFA7196021AC5B35005A4F3C /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
+		EFA7196121AC5B3A005A4F3C /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,19 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6B9328521AC2136008F5F35 /* Time.cpp in Sources */,
-				D6B9328421AC20FA008F5F35 /* Fanpage.cpp in Sources */,
-				D6B9327A21AAD683008F5F35 /* Member.cpp in Sources */,
-				D6B9328821AC2147008F5F35 /* Facebook.cpp in Sources */,
-				D6B9328721AC213E008F5F35 /* Status.cpp in Sources */,
-				D6B9328621AC213A008F5F35 /* Date.cpp in Sources */,
-				EFA7195821AC2122005A4F3C /* Time.cpp in Sources */,
-				EFA7195721AC2114005A4F3C /* Fanpage.cpp in Sources */,
-				D6B9327A21AAD683008F5F35 /* Member.cpp in Sources */,
-				EFA7195B21AC212C005A4F3C /* Facebook.cpp in Sources */,
+				EFA7195E21AC5B30005A4F3C /* Time.cpp in Sources */,
+				EFA7195D21AC5B2D005A4F3C /* Fanpage.cpp in Sources */,
 				EFA7195C21AC2131005A4F3C /* main.cpp in Sources */,
-				EFA7195A21AC2129005A4F3C /* Status.cpp in Sources */,
-				EFA7195921AC2126005A4F3C /* Date.cpp in Sources */,
+				EFA7196121AC5B3A005A4F3C /* Facebook.cpp in Sources */,
+				EFA7196021AC5B35005A4F3C /* Status.cpp in Sources */,
+				EFA7195F21AC5B33005A4F3C /* Date.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R488R6B844;
+				DEVELOPMENT_TEAM = 5V83W73FCU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -298,7 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R488R6B844;
+				DEVELOPMENT_TEAM = 5V83W73FCU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
