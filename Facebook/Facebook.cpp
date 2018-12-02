@@ -116,6 +116,9 @@ void Facebook:: displayStatuses()
 
 void Facebook:: displayAllMembers()
 {
+    if(members == nullptr)
+        cout << "There are no members subscriptions\n" ;
+    
     for(int i = 0 ; i < membersCount; i++)
     {
         members[i]->printMember();
@@ -126,6 +129,9 @@ void Facebook:: displayAllMembers()
 void Facebook:: displayAllMembersAndFanpages()
 {
     displayAllMembers();
+    
+    if(fanpages == nullptr)
+        cout << "\nThere are no fanpages subscriptions\n" ;
     
     for(int i = 0 ; i < fanpageCount ; i++)
     {
@@ -267,7 +273,7 @@ Member* Facebook::findMember(char* name)
         }
     }
     
-    cout << "Member not found";
+    cout << "Member not found\n";
     return nullptr;
 }
 
@@ -279,7 +285,7 @@ Fanpage* Facebook::findFanpage(char* name)
         }
     }
     
-    cout << "Fanpage not found";
+    cout << "Fanpage not found\n";
     return nullptr;
 }
 

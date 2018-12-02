@@ -112,8 +112,8 @@ Date* Member:: getBirthDate() const
 
 void Member:: printMember() const
 {
-    cout << "Member Name: " << name
-    << "Birth Date: " << birthDate->getDateStr() << " /n";
+    cout << "\nMember Name: " << name << "\n"
+    << "Birth Date: " << birthDate->getDateStr() << "\n";
 }
 
 bool Member::addStatus(Status* newStatus)
