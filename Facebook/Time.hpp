@@ -15,9 +15,9 @@ class Time
 {
 private:
     // Attributes
-    int     hours = 0;
-    int     minutes = 0;
-    int     seconds = 0;
+    int     hours ;//= 0;
+    int     minutes ;//= 0;
+    int     seconds ;//= 0;
     char    timeStr[9];
     
 public:
@@ -41,7 +41,7 @@ public:
         this->hours = hours;
         this->minutes = minutes;
         this->seconds = seconds;
-        
+
         timeStr[0] = hours / 10;
         timeStr[1] = hours % 10;
         timeStr[2] = ':';
@@ -58,6 +58,7 @@ public:
     int     getMinutes()    const   {return minutes;}
     int     getSeconds()    const   {return seconds;}
     char*   getTimeStr()            {return timeStr;}
+    void    printTime()     const;
 };
 
 #endif /* Time_hpp */

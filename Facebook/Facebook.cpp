@@ -178,7 +178,7 @@ bool Facebook::addFanpage()
     char name[NAME_MAX_SIZE];
     
     cout << "Please enter the fanpage's name:\n";
-//    cin.ignore();
+    cin.ignore();
     cin.getline(name, NAME_MAX_SIZE);
     
     Fanpage* newFanepage = new Fanpage(name);

@@ -24,8 +24,8 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
         year += (dateStr[6] - '0') * 1000;
         
         if (length != 10 ||
-            dateStr[2] == '/' ||
-            dateStr[5] == '/')
+            dateStr[2] != '/' ||
+            dateStr[5] != '/')
         {   
             cout << "Please enter a date in the following format: \"dd/mm/yyyy\"\n";
             cin.ignore();
@@ -50,6 +50,11 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
     } while (badInput);
     
     return dateStr;
+}
+
+void Date::printDate() const
+{
+    cout << dateStr ;
 }
 
 

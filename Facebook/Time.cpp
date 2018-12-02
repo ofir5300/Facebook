@@ -7,3 +7,8 @@
 //
 
 #include "Time.hpp"
+
+void Time::printTime() const
+{
+    cout << timeStr ;
+}
