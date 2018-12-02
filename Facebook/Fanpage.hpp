@@ -53,6 +53,7 @@ public:
     
     bool        addFan(Member* fan);
     Member**    getFans()                   const;
+    int         getFansCount();
     Status**    getStatuses()               const;
     char*       getName();
     int         getStatusesCount()          const;

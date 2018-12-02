@@ -12,6 +12,11 @@ int main(int argc, const char * argv[]) {
     
     int input = 0;
     Facebook fb;
+    
+    Date dt = Date();
+    dt.printDate();
+    Time tm = Time(10,15,30);
+    tm.printTime();
 
     cout << "Welcome to Facebook! \n";
     fb.displayMenu();

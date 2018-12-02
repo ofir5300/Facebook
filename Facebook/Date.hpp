@@ -76,6 +76,7 @@ public:
     int     getMonth()      const   {return month;}
     int     getYear()       const   {return year;}
     char*   getDateStr()       {return dateStr;}
+    void    printDate()     const;
     char*   fixInput(char* dateStr);
     int     compare(Date* other);
 };

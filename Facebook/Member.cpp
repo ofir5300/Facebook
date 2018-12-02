@@ -18,6 +18,11 @@ int Member:: getStatusesCount()
     return statusesCount;
 }
 
+int Member:: getFriendsCount()
+{
+    return friendsCount;
+}
+
 Status** Member:: getRecentStatuses() const
 {   // retruns an array of 10 last statuses, or all statuses if less than 10
     Status** recent = new Status* [(RECENT_STATUSES > statusesCount) ? RECENT_STATUSES : statusesCount];

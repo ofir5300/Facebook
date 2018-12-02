@@ -52,6 +52,11 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
     return dateStr;
 }
 
+void Date::printDate() const
+{
+    cout << dateStr ;
+}
+
 
 int Date::compare(Date* other)
 {
