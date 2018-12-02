@@ -34,6 +34,7 @@ public:
     const type    getType()       const {return contentType;}
     const char*   getContent()    const;
     void          printStatus()   const;
+    int     compare(Status* other);
     
 private:
     // Attributes

@@ -8,7 +8,26 @@
 
 #include "Time.hpp"
 
+
 void Time::printTime() const
 {
-    cout << timeStr ;
+    cout << timeStr;
+}
+
+int Time::compare(Time* other)
+{
+    if (this->hours > other->hours)
+        return 1;
+    else if (this->hours < other->hours)
+        return -1;
+    else if (this->minutes > other->minutes)
+        return 1;
+    else if (this->minutes < other->minutes)
+        return -1;
+    else if (this->seconds > other->seconds)
+        return 1;
+    else if (this->seconds < other->seconds)
+        return -1;
+    
+    return 0;
 }

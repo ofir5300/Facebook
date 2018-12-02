@@ -70,6 +70,8 @@ public:
     Status**            getStatuses()            const;
     int                 getStatusesCount();
     Status**            getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
+    Status**            getAllFriendsRecentStatuses()   const;  // returns an array of the 10 most recent statuses of all member's friends
+    Status* getMostRecentStatus();
     Status**            fetchFriendsStatuses()   const;
     bool                addFriend(Member* newFriend);
     bool                addFanPage(Fanpage* newFanPage);

@@ -13,7 +13,7 @@ const char* Status:: getContent() const
     return content;
 }
 
-void Status:: printStatus() const                           ///////////////////
+void Status:: printStatus() const                           
 {
     cout << "Status posted on " ;
     date->printDate();
@@ -22,7 +22,15 @@ void Status:: printStatus() const                           ///////////////////
     cout << "\n[" << typeNames[(int)contentType - 1] << "] : " << content << "\n";
 }
 
-
+int Status::compare(Status* other)
+{
+    int resultByDate = this->date->compare(other->date);
+    int resultByTime = this->time->compare(other->time);
+    
+    if (resultByDate == 0)
+        return resultByTime;
+    return resultByDate;
+}
 
 
 

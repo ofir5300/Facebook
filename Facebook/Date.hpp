@@ -78,6 +78,7 @@ public:
     char*   getDateStr()       {return dateStr;}
     void    printDate()     const;
     char*   fixInput(char* dateStr);
+    int     compare(Date* other);
 };
 
 #endif /* Date_hpp */

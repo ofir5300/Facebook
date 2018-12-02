@@ -59,6 +59,7 @@ public:
     int     getSeconds()    const   {return seconds;}
     char*   getTimeStr()            {return timeStr;}
     void    printTime()     const;
+    int     compare(Time* other);
 };
 
 #endif /* Time_hpp */

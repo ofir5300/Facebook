@@ -19,7 +19,9 @@ void Facebook::displayMenu()
     cout << "6) Add a fan to fanpage\n";
     cout << "7) Display all members and fanpages\n";
     cout << "8) Display all member's friends or fanpage's fans\n";
-    cout << "9) Exit\n\n";
+    cout << "9) Exit\n";
+    cout << "\nExtra actions:\n";
+    cout << "10) Display member's feed\n";
 }
 
 
@@ -53,7 +55,9 @@ void Facebook::runFunction(int funcNum)
         case 9:
             exitFacebook();
             break;
-
+        case 10:
+            printRecentStatuses();
+            break;
         default:
             cout << "Wrong input\n";
             break;
@@ -320,11 +324,12 @@ Member* Facebook::findMember(char* name)
 {
     for (int i = 0; i < membersCount; i++) {
         if (strcmp(name, members[i]->getName()) == 0) {
+            cout << "--- Member found! ---\n";
             return members[i];
         }
     }
     
-    cout << "Member not found\n";
+    cout << "--- Member not found ---\n";
     return nullptr;
 }
 
@@ -332,6 +337,7 @@ Fanpage* Facebook::findFanpage(char* name)
 {
     for (int i = 0; i < fanpageCount; i++) {
         if (strcmp(name, fanpages[i]->getName()) == 0) {
+            cout << "--- Fanpage found! ---\n";
             return fanpages[i];
         }
     }
@@ -398,4 +404,30 @@ void Facebook::exitFacebook()
     
     delete members;
     delete fanpages;
+}
+
+
+void Facebook::printRecentStatuses()
+{
+    char name[NAME_MAX_SIZE];
+    
+    do
+    {
+        cout << "Please enter member name:\n" ;
+        cin.ignore();
+        cin.getline(name, NAME_MAX_SIZE);
+    }
+    while(findMember(name) == nullptr);
+    
+    Member* member = findMember(name);
+    Status** recent = member->getAllFriendsRecentStatuses();
+    
+    for(int i = 0 ; i < RECENT_STATUSES; i++)
+    {
+        if (recent[i]) {
+            recent[i]->printStatus();
+        }
+        else if (i == 0 && recent[i] == nullptr)
+            cout << "There are no statuses yet\n";
+    }
 }
