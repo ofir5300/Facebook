@@ -20,6 +20,8 @@ class Status
 public:
     // Methods
     enum type {Text = 1, Image = 2, Video = 3};
+    char* typeNames[3] = {"Text", "Image", "Video"};
+    
     Status(type contentType, char* content)
     {
         this->date = new Date();
