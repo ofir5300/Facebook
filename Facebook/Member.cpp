@@ -10,7 +10,7 @@
 
 Status** Member:: getStatuses() const
 {
-    return (Status**)statuses;
+    return statuses;
 }
 
 int Member:: getStatusesCount()
@@ -26,7 +26,7 @@ Status** Member:: getRecentStatuses() const
         recent[i] = statuses[i];
     }
     
-    return (Status**)recent;
+    return recent;
 }
 
 Status** Member:: fetchFriendsStatuses() const
@@ -47,7 +47,7 @@ Status** Member:: fetchFriendsStatuses() const
             friendsStatuses[counter++] =  recent[j];
         }
     }
-    return (Status**)friendsStatuses;
+    return friendsStatuses;
 }
         
 bool Member:: addFriend(Member* newFriend)
@@ -115,15 +115,6 @@ void Member:: printMember() const
     cout << "Member Name: " << name
     << "Birth Date: " << birthDate->getDateStr() << " /n";
 }
-
-
-
-
-
-
-
-
-
 
 bool Member::addStatus(Status* newStatus)
 {

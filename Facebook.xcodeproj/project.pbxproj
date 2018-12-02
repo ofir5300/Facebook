@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6950F6B21AEF73100B6C690 /* Member.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327821AAD683008F5F35 /* Member.cpp */; };
+		D6950F6C21AF26DB00B6C690 /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
+		D6950F6D21AF26DF00B6C690 /* Member.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327821AAD683008F5F35 /* Member.cpp */; };
+		D6950F6E21AF26E200B6C690 /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
+		D6950F6F21AF26E500B6C690 /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
+		D6950F7021AF26E900B6C690 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
+		D6950F7121AF26ED00B6C690 /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
 		EFA7195C21AC2131005A4F3C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194721AAD588005A4F3C /* main.cpp */; };
-		EFA7195D21AC5B2D005A4F3C /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
-		EFA7195E21AC5B30005A4F3C /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
-		EFA7195F21AC5B33005A4F3C /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
-		EFA7196021AC5B35005A4F3C /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327B21AAE248008F5F35 /* Status.cpp */; };
-		EFA7196121AC5B3A005A4F3C /* Facebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194E21AAD65C005A4F3C /* Facebook.cpp */; };
-		EFA7197C21AEF71F005A4F3C /* Member.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327821AAD683008F5F35 /* Member.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -151,14 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFA7195E21AC5B30005A4F3C /* Time.cpp in Sources */,
-				D6950F6B21AEF73100B6C690 /* Member.cpp in Sources */,
-				EFA7197C21AEF71F005A4F3C /* Member.cpp in Sources */,
-				EFA7195D21AC5B2D005A4F3C /* Fanpage.cpp in Sources */,
+				D6950F7021AF26E900B6C690 /* Time.cpp in Sources */,
+				D6950F6D21AF26DF00B6C690 /* Member.cpp in Sources */,
 				EFA7195C21AC2131005A4F3C /* main.cpp in Sources */,
-				EFA7196121AC5B3A005A4F3C /* Facebook.cpp in Sources */,
-				EFA7196021AC5B35005A4F3C /* Status.cpp in Sources */,
-				EFA7195F21AC5B33005A4F3C /* Date.cpp in Sources */,
+				D6950F7121AF26ED00B6C690 /* Fanpage.cpp in Sources */,
+				D6950F6C21AF26DB00B6C690 /* Facebook.cpp in Sources */,
+				D6950F6E21AF26E200B6C690 /* Status.cpp in Sources */,
+				D6950F6F21AF26E500B6C690 /* Date.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R488R6B844;
+				DEVELOPMENT_TEAM = 5V83W73FCU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -289,7 +287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R488R6B844;
+				DEVELOPMENT_TEAM = 5V83W73FCU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

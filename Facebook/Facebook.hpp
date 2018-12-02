@@ -10,9 +10,16 @@
 #define Facebook_hpp
 
 #include "constants.hpp"
+//#include "Date.hpp"
+//#include "Time.hpp"
 #include "Member.hpp"
-#include "Fanpage.hpp"
-#include "Status.hpp"
+//#include "Fanpage.hpp"
+//#include "Status.hpp"
+
+
+//class Member;
+//class Fanpage;co
+//class Status;
 
 class Facebook
 {
