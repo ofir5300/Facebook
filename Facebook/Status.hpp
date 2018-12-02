@@ -14,20 +14,12 @@
 #include "Time.hpp"
 #include "Fanpage.hpp"
 
-//class Date;
-
-class Fanpage;
 
 class Status
 {
-private:
-    // Attributes
-    Date*    date;
-    Time*    time;
-    type    contentType;
-    char    content[STATUS_MAX_SIZE] = "";
 public:
     // Methods
+    enum type {Text = 1, Image = 2, Video = 3};
     Status(type contentType, char* content)
     {
         this->date = new Date();
@@ -40,6 +32,13 @@ public:
     const type    getType()       const {return contentType;}
     const char*   getContent()    const;
     void          printStatus()   const;
+    
+private:
+    // Attributes
+    Date*    date;
+    Time*    time;
+    type    contentType;
+    char    content[STATUS_MAX_SIZE] = "";
 };
 
 #endif /* Status_hpp */
