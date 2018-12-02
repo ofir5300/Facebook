@@ -49,6 +49,11 @@ int Fanpage::getStatusesCount() const
     return statusesCount;
 }
 
+int Fanpage:: getFansCount()
+{
+    return fansCount;
+}
+
 void Fanpage::printFanpage() const
 {
     cout << "Fanpage name: " << name << "\n";

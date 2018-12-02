@@ -48,7 +48,7 @@ void Facebook::runFunction(int funcNum)
             displayAllMembersAndFanpages();
             break;
         case 8:
-            displayAllMembers();
+            displayAllMembersOfFanpageOrMember();
             break;
         case 9:
             exitFacebook();
@@ -139,6 +139,57 @@ void Facebook:: displayAllMembersAndFanpages()
     }
 }
 
+void Facebook:: displayAllMembersOfFanpageOrMember()
+{
+    int choice = 0;
+    char name[NAME_MAX_SIZE];
+    
+    while (choice != 1 && choice != 2)
+    {
+        cout << "Do you want to display fans of a fanpage or friends of a member?\n"
+        << "1) A Member's friends\n"
+        << "2) A Fanpage's fans\n";
+        cin >> choice;
+    }
+    
+    if(choice == 1)
+    {
+        do
+        {
+            cout << "Please enter member name\n" ;
+            cin.ignore();
+            cin.getline(name, NAME_MAX_SIZE);
+        }
+        while(findMember(name) == nullptr);
+        
+        Member* member = findMember(name);
+        Member** friends = member->getFriends();
+        
+        for(int i = 0 ; i < member->getFriendsCount() ; i++)
+        {
+            friends[i]->printMember();
+        }
+    }
+    else
+    {
+        do
+        {
+            cout << "Please enter fanpage name\n" ;
+            cin.ignore();
+            cin.getline(name, NAME_MAX_SIZE);
+        }
+        while(findFanpage(name) == nullptr);
+        
+        Fanpage* fanpage = findFanpage(name);
+        Member** fans = fanpage->getFans();
+        
+        for(int i = 0 ; i < fanpage->getFansCount() ; i++)
+        {
+            fans[i]->printMember();
+        }
+    }
+    
+}
 
 bool Facebook::addMember()
 {
@@ -327,7 +378,7 @@ bool Facebook::pairFanToFanpage()
     if (member == nullptr) {return false;}
     
     cout << "Please enter fanpage's name:\n";
-    cin.ignore();
+//    cin.ignore();
     cin.getline(fanpageName, NAME_MAX_SIZE);
     
     fanpage = findFanpage(fanpageName);

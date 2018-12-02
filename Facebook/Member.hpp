@@ -76,6 +76,7 @@ public:
     bool                addStatus(Status* newStatus);
     Fanpage**           getFanPages()      const;
     Member**            getFriends()       const;
+    int                 getFriendsCount() ; 
     char*               getName();
     Date*               getBirthDate()     const;
     void                printMember()      const;

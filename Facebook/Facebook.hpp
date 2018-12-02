@@ -45,6 +45,7 @@ public:
     bool pairFanToFanpage();
     void displayAllMembersAndFanpages();
     void displayAllMembers();
+    void displayAllMembersOfFanpageOrMember();
     void exitFacebook();
 
     Member*     findMember(char* name);
