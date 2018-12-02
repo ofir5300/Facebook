@@ -17,6 +17,8 @@ int main(int argc, const char * argv[]) {
     fb.displayMenu();
 
     do {
+        cout << "\nPlease choose action:\n";
+        cin.clear();
         cin >> input;
         fb.runFunction(input);
     } while (input != 9);

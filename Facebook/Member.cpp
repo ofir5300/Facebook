@@ -29,6 +29,66 @@ Status** Member:: getRecentStatuses() const
     return recent;
 }
 
+
+
+Status** Member::getAllFriendsRecentStatuses() const
+{
+    Status* MostRecentStatusTempPtr = nullptr;
+    int i, j, currRecentIndex = 0, compareResult;
+    
+    // creating friend's statuses indices tracking
+    int* statusIndices = new int(friendsCount);
+    for (i = 0; i < friendsCount; i++)
+        statusIndices[i] = friends[i]->getStatusesCount() -1;
+    
+    // initialising recent statuses arr
+    Status** recentStatuses = new Status* [RECENT_STATUSES];
+    for (i = 0; i < RECENT_STATUSES; i++)
+        recentStatuses[i] = nullptr;
+    
+    // [ 3 | -1 | 2 | 0 ]
+
+      for (i = 0; i < RECENT_STATUSES; i++) {
+        MostRecentStatusTempPtr = nullptr;
+        for (j = 0; j < friendsCount; j++) {
+            if (statusIndices[j] != -1 && MostRecentStatusTempPtr == nullptr)
+            {
+                MostRecentStatusTempPtr = friends[j]->getStatuses()[statusIndices[j]];
+                currRecentIndex = j;
+            }
+            else if (statusIndices[j] != -1)
+            {
+                compareResult = MostRecentStatusTempPtr->compare(friends[j]->getStatuses()[statusIndices[j]]);
+                
+                if (compareResult == -1) {
+                    MostRecentStatusTempPtr = friends[j]->getStatuses()[statusIndices[j]];
+                    currRecentIndex = j;
+                }
+            }
+        }
+        
+        if (MostRecentStatusTempPtr != nullptr)
+        {
+            recentStatuses[i] = MostRecentStatusTempPtr;
+            statusIndices[currRecentIndex] --;
+        }
+    }
+    
+    if (recentStatuses[0] == nullptr) {
+        cout << "No statuses\n";
+        return nullptr;
+    }
+    
+    delete statusIndices;
+    return recentStatuses;
+}
+
+
+Status* Member::getMostRecentStatus()
+{
+    return (statuses == nullptr)? nullptr : statuses[statusesCount - 1];
+}
+
 Status** Member:: fetchFriendsStatuses() const
 {   // returns an array of all friends recent statuses (10 or less for each)
     int size = 0;

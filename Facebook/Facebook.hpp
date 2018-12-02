@@ -49,6 +49,7 @@ public:
 
     Member*     findMember(char* name);
     Fanpage*    findFanpage(char* name);
+    void printRecentStatuses();
 };
 
 

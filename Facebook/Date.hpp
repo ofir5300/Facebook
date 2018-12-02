@@ -77,6 +77,7 @@ public:
     int     getYear()       const   {return year;}
     char*   getDateStr()       {return dateStr;}
     char*   fixInput(char* dateStr);
+    int     compare(Date* other);
 };
 
 #endif /* Date_hpp */

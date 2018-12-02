@@ -24,8 +24,8 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
         year += (dateStr[6] - '0') * 1000;
         
         if (length != 10 ||
-            dateStr[2] == '/' ||
-            dateStr[5] == '/')
+            dateStr[2] != '/' ||
+            dateStr[5] != '/')
         {   
             cout << "Please enter a date in the following format: \"dd/mm/yyyy\"\n";
             cin.ignore();
@@ -53,3 +53,20 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
 }
 
 
+int Date::compare(Date* other)
+{
+    if (this->year > other->year)
+        return 1;
+    else if (this->year < other->year)
+        return -1;
+    else if (this->month > other->month)
+        return 1;
+    else if (this->month < other->month)
+        return -1;
+    else if (this->day > other->day)
+        return 1;
+    else if (this->day < other->day)
+        return -1;
+    
+    return 0;
+}
