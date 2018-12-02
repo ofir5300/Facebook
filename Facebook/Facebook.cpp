@@ -19,7 +19,7 @@ void Facebook::displayMenu()
     cout << "6) Add a fan to fanpage\n";
     cout << "7) Display all members and fanpages\n";
     cout << "8) Display all member's friends or fanpage's fans\n";
-    cout << "9) Exit";
+    cout << "9) Exit\n\n";
 }
 
 
@@ -80,7 +80,7 @@ void Facebook:: displayStatuses()
     {
         do
         {
-            cout << "Please enter member name" ;
+            cout << "Please enter member name\n" ;
             cin.ignore();
             cin.getline(name, NAME_MAX_SIZE);
         }
@@ -98,7 +98,7 @@ void Facebook:: displayStatuses()
     {
         do
         {
-            cout << "Please enter fanpage name" ;
+            cout << "Please enter fanpage name\n" ;
             cin.ignore();
             cin.getline(name, NAME_MAX_SIZE);
         }
@@ -143,7 +143,7 @@ bool Facebook::addMember()
     cin.ignore();
     cin.getline(name, NAME_MAX_SIZE);
     cout << "Please enter the member's birthdate\n"
-         << "in the following format: dd/mm/yyyy";
+         << "in the following format: dd/mm/yyyy\n";
     cin >> date;
     Date* birthdate = new Date(date);
     
@@ -172,7 +172,7 @@ bool Facebook::addFanpage()
     char name[NAME_MAX_SIZE];
     
     cout << "Please enter the fanpage's name:\n";
-    cin.ignore();
+//    cin.ignore();
     cin.getline(name, NAME_MAX_SIZE);
     
     Fanpage* newFanepage = new Fanpage(name);
@@ -267,7 +267,7 @@ Member* Facebook::findMember(char* name)
         }
     }
     
-    cout << "Member not found";
+    cout << "Member not found\n";
     return nullptr;
 }
 
@@ -279,7 +279,7 @@ Fanpage* Facebook::findFanpage(char* name)
         }
     }
     
-    cout << "Fanpage not found";
+    cout << "Fanpage not found\n";
     return nullptr;
 }
 
