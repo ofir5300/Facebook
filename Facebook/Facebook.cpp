@@ -166,7 +166,7 @@ void Facebook:: displayAllMembersOfFanpageOrMember()
         }
         while(findMember(name) == nullptr);
         
-        Member* member = findMember(name);
+        Member* member = findMember(name);          // prints "member founds twice"
         Member** friends = member->getFriends();
         
         for(int i = 0 ; i < member->getFriendsCount() ; i++)
@@ -359,7 +359,7 @@ bool Facebook::pair2Members()
     if (m1 == nullptr) {return false;}
     
     cout << "Please enter second member's name:\n";
-    cin.ignore();
+//    cin.ignore();
     cin.getline(name2, NAME_MAX_SIZE);
     
     m2 = findMember(name2);
