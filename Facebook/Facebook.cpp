@@ -29,28 +29,28 @@ void Facebook::runFunction(int funcNum)
 {
     switch (funcNum) {
         case 1:
-            addMember();
+            addMember();    //V
             break;
         case 2:
-            addFanpage();
+            addFanpage();   //V
             break;
         case 3:
-            addStatus();
+            addStatus();    //V
             break;
         case 4:
-            displayStatuses();
+            displayStatuses();  //V fix now time presented
             break;
         case 5:
-            pair2Members();
+            pair2Members(); //V
             break;
         case 6:
-            pairFanToFanpage();
+            pairFanToFanpage(); //V
             break;
         case 7:
-            displayAllMembersAndFanpages();
+            displayAllMembersAndFanpages(); //V
             break;
         case 8:
-            displayAllMembersOfFanpageOrMember();
+            displayAllMembersOfFanpageOrMember();   //V
             break;
         case 9:
             exitFacebook();
@@ -424,10 +424,14 @@ void Facebook::printRecentStatuses()
     
     for(int i = 0 ; i < RECENT_STATUSES; i++)
     {
-        if (recent[i]) {
+        if (recent[i] != nullptr)
             recent[i]->printStatus();
-        }
-        else if (i == 0 && recent[i] == nullptr)
+        else if (i == 0 && recent[i] == nullptr)    // no statuses at all
             cout << "There are no statuses yet\n";
+        else    // no more statuses in feed
+            break;
     }
 }
+
+
+
