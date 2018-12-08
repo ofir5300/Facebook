@@ -24,16 +24,25 @@ public:
     // Constructors
     Time()
     {
-        int nowHours, nowMinutes, nowSeconds;
+//        int nowHours, nowMinutes, nowSeconds;
         
         time_t t = time(0);   // get time now
         tm* now = localtime(&t);
         
-        nowHours = now->tm_hour;
-        nowMinutes = now->tm_min;
-        nowSeconds = now->tm_sec;
+        hours = now->tm_hour;
+        minutes = now->tm_min;
+        seconds = now->tm_sec;
         
-        Time(nowHours, nowMinutes, nowSeconds);
+        timeStr[0] = hours / 10;
+        timeStr[1] = hours % 10;
+        timeStr[2] = ':';
+        timeStr[3] = minutes / 10;
+        timeStr[4] = minutes % 10;
+        timeStr[5] = ':';
+        timeStr[6] = seconds / 10;
+        timeStr[7] = seconds % 10;
+        timeStr[8] = '\n';
+//        Time(nowHours, nowMinutes, nowSeconds);
     }
     
     Time(int hours, int minutes, int seconds)
@@ -41,7 +50,7 @@ public:
         this->hours = hours;
         this->minutes = minutes;
         this->seconds = seconds;
-
+        
         timeStr[0] = hours / 10;
         timeStr[1] = hours % 10;
         timeStr[2] = ':';
@@ -52,7 +61,7 @@ public:
         timeStr[7] = seconds % 10;
         timeStr[8] = '\n';
     }
-    
+  
     // Methods
     int     getHours()      const   {return hours;}
     int     getMinutes()    const   {return minutes;}
