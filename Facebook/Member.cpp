@@ -44,7 +44,7 @@ Status** Member::getAllFriendsRecentStatuses() const
     // creating friend's statuses indices tracking
     int* statusIndices = new int(friendsCount);
     for (i = 0; i < friendsCount; i++)
-        statusIndices[i] = friends[i]->getStatusesCount() -1;
+        statusIndices[i] = (friends[i]->getStatusesCount()) -1;
     
     // initialising recent statuses arr
     Status** recentStatuses = new Status* [RECENT_STATUSES];
@@ -57,15 +57,16 @@ Status** Member::getAllFriendsRecentStatuses() const
         MostRecentStatusTempPtr = nullptr;
         for (j = 0; j < friendsCount; j++) {
             if (statusIndices[j] != -1 && MostRecentStatusTempPtr == nullptr)
-            {
+            {   // point on friend 'j' recent status if no status pointed yet
                 MostRecentStatusTempPtr = friends[j]->getStatuses()[statusIndices[j]];
                 currRecentIndex = j;
             }
             else if (statusIndices[j] != -1)
-            {
+            {   // compare pointed status with friends 'j; recent one
                 compareResult = MostRecentStatusTempPtr->compare(friends[j]->getStatuses()[statusIndices[j]]);
                 
-                if (compareResult == -1) {
+                if (compareResult == -1)
+                { // if friend 'j' status is newer than the current pointed status
                     MostRecentStatusTempPtr = friends[j]->getStatuses()[statusIndices[j]];
                     currRecentIndex = j;
                 }

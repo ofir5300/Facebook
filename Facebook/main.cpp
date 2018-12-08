@@ -12,11 +12,6 @@ int main(int argc, const char * argv[]) {
     
     int input = 0;
     Facebook fb;
-    
-    Date dt = Date();
-    dt.printDate();
-    Time tm = Time(10,15,30);
-    tm.printTime();
 
     cout << "Welcome to Facebook! \n";
     fb.displayMenu();
@@ -24,6 +19,7 @@ int main(int argc, const char * argv[]) {
     do {
         cout << "\nPlease choose action:\n";
         cin.clear();
+        input = 0;
         cin >> input;
         fb.runFunction(input);
     } while (input != 9);

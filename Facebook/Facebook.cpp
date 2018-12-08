@@ -29,7 +29,7 @@ void Facebook::runFunction(int funcNum)
 {
     switch (funcNum) {
         case 1:
-            addMember();
+            addMember();    
             break;
         case 2:
             addFanpage();
@@ -166,7 +166,7 @@ void Facebook:: displayAllMembersOfFanpageOrMember()
         }
         while(findMember(name) == nullptr);
         
-        Member* member = findMember(name);
+        Member* member = findMember(name);          // prints "member founds twice"
         Member** friends = member->getFriends();
         
         for(int i = 0 ; i < member->getFriendsCount() ; i++)
@@ -359,7 +359,7 @@ bool Facebook::pair2Members()
     if (m1 == nullptr) {return false;}
     
     cout << "Please enter second member's name:\n";
-    cin.ignore();
+//    cin.ignore();
     cin.getline(name2, NAME_MAX_SIZE);
     
     m2 = findMember(name2);
@@ -424,10 +424,14 @@ void Facebook::printRecentStatuses()
     
     for(int i = 0 ; i < RECENT_STATUSES; i++)
     {
-        if (recent[i]) {
-            recent[i]->printStatus();
-        }
-        else if (i == 0 && recent[i] == nullptr)
+        if (i == 0 && recent[i] == nullptr)    // no statuses at all
             cout << "There are no statuses yet\n";
+        else if (recent[i] != nullptr)
+            recent[i]->printStatus();
+        else    // no more statuses in feed
+            break;
     }
 }
+
+
+
