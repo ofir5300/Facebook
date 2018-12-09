@@ -6,11 +6,15 @@
 //  Copyright © 2018 Ilan Kushnir. All rights reserved.
 //
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #ifndef constants_hpp
 #define constants_hpp
 
 #include <stdio.h>
 #include <iostream>
+#include <ctime>
+
 //#include "string.h"
 using namespace std;
 
