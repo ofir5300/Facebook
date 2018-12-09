@@ -45,22 +45,6 @@ public:
 //        Time(nowHours, nowMinutes, nowSeconds);
     }
     
-    Time(int hours, int minutes, int seconds)
-    {
-        this->hours = hours;
-        this->minutes = minutes;
-        this->seconds = seconds;
-        
-        timeStr[0] = hours / 10 + '0';
-        timeStr[1] = hours % 10 + '0';
-        timeStr[2] = ':';
-        timeStr[3] = minutes / 10 + '0';
-        timeStr[4] = minutes % 10 + '0';
-        timeStr[5] = ':';
-        timeStr[6] = seconds / 10 + '0';
-        timeStr[7] = seconds % 10 + '0';
-        timeStr[8] = '\0';
-    }
   
     // Methods
     int     getHours()      const   {return hours;}

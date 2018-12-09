@@ -10,7 +10,7 @@
 
 char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
 {
-    int day, month, year, length = (int)strlen(dateStr), badInput = 0;
+    int day, month, year, length, badInput = 0;
     
     do {
         
@@ -23,13 +23,14 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
         year += (dateStr[7] - '0') * 100;
         year += (dateStr[6] - '0') * 1000;
         
+        length = (int)strlen(dateStr);
+        
         if (length != 10 ||
             dateStr[2] != '/' ||
             dateStr[5] != '/')
         {   
             cout << "Please enter a date in the following format: \"dd/mm/yyyy\"\n";
-            cin.ignore();
-            cin.getline(dateStr, 10);
+            cin >> dateStr;
             badInput = 1;
         }
         else if (day > 31 || day < 1 ||
@@ -37,8 +38,7 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
                  year < 0 || year > 9999)
         {
             cout << "Please enter a date with legal numbers\n";
-            cin.ignore();
-            cin.getline(dateStr, 10);
+            cin >> dateStr;
             badInput = 1;
         }
         else
