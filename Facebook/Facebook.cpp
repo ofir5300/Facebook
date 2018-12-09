@@ -324,7 +324,7 @@ Member* Facebook::findMember(char* name)
 {
     for (int i = 0; i < membersCount; i++) {
         if (strcmp(name, members[i]->getName()) == 0) {
-            cout << "--- Member found! ---\n";
+//            cout << "--- Member found! ---\n";
             return members[i];
         }
     }
@@ -337,7 +337,7 @@ Fanpage* Facebook::findFanpage(char* name)
 {
     for (int i = 0; i < fanpageCount; i++) {
         if (strcmp(name, fanpages[i]->getName()) == 0) {
-            cout << "--- Fanpage found! ---\n";
+//            cout << "--- Fanpage found! ---\n";
             return fanpages[i];
         }
     }

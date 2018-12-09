@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Facebook/main.cpp"
-            timestampString = "565453151.591691"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "main(int argc, const char * argv[])"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -47,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
             endingLineNumber = "154"
-            landmarkName = "Facebook::addMember()"
+            landmarkName = "Facebook:: displayAllMembersOfFanpageOrMember()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -63,8 +47,56 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "Facebook::addMember()"
+            landmarkName = "Facebook:: displayAllMembersOfFanpageOrMember()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Facebook/Date.hpp"
+            timestampString = "566051191.678575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "Date()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Date::Date()"
+                  moduleName = "Facebook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ilan/Google%20Drive/Education/CS%20Degree/MTA/%D7%AA%D7%9B%D7%A0%D7%95%D7%AA%20%D7%9E%D7%95%D7%9B%D7%95%D7%95%D7%9F%20%D7%A2%D7%A6%D7%9E%D7%99%D7%9D/Projects/Facebook/Facebook/Date.hpp"
+                  timestampString = "566050723.454721"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Date::Date()"
+                  moduleName = "Facebook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ilan/Google%20Drive/Education/CS%20Degree/MTA/%D7%AA%D7%9B%D7%A0%D7%95%D7%AA%20%D7%9E%D7%95%D7%9B%D7%95%D7%95%D7%9F%20%D7%A2%D7%A6%D7%9E%D7%99%D7%9D/Projects/Facebook/Facebook/Date.hpp"
+                  timestampString = "566050723.459058"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

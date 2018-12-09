@@ -23,6 +23,7 @@ int main(int argc, const char * argv[]) {
         cin >> input;
         fb.runFunction(input);
     } while (input != 9);
-    
+
+
     return 0;
 }
