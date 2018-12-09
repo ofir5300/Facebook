@@ -47,23 +47,6 @@ public:
 //        Date(nowDay, nowMonth, nowYear);
     }
     
-    Date(int day, int month, int year)
-    {
-        this->day = day;
-        this->month = month;
-        this->year = year;
-        dateStr[0] = day/10 + '0';
-        dateStr[1] = day%10 + '0';
-        dateStr[2] = '/';
-        dateStr[3] = month/10 + '0';
-        dateStr[4] = month%10 + '0';
-        dateStr[5] = '/';
-        dateStr[6] = year / 1000;
-        dateStr[7] = (year % 1000) / 100 + '0';
-        dateStr[8] = (year % 100) / 10 + '0';
-        dateStr[9] = year % 10 + '0';
-        dateStr[10] = '\0';
-    }
 
     Date(char* dateStr)
     {

@@ -56,7 +56,7 @@ int Fanpage:: getFansCount()
 
 void Fanpage::printFanpage() const
 {
-    cout << "Fanpage name: " << name << "\n";
+    cout << "\nFanpage name: " << name << "\n";
 }
 
 
