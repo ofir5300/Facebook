@@ -81,7 +81,8 @@ Status** Member::getAllFriendsRecentStatuses() const
     }
     
     if (recentStatuses[0] == nullptr) {
-        cout << "No statuses\n";
+        // if there are no friends to this member or no statuses for existing friends
+//        cout << "No statuses\n";
         return nullptr;
     }
     

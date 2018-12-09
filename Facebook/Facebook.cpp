@@ -424,8 +424,11 @@ void Facebook::printRecentStatuses()
     
     for(int i = 0 ; i < RECENT_STATUSES; i++)
     {
-        if (i == 0 && recent[i] == nullptr)    // no statuses at all
+        if (i == 0 && recent == nullptr)    // no statuses at all
+        {
             cout << "There are no statuses yet\n";
+            break;
+        }
         else if (recent[i] != nullptr)
             recent[i]->printStatus();
         else    // no more statuses in feed

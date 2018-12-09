@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
 
     cout << "Welcome to Facebook! \n";
     fb.displayMenu();
-
+    
     do {
         cout << "\nPlease choose action:\n";
         cin.clear();
