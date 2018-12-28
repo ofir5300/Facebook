@@ -29,13 +29,16 @@ public:
     {
         strcpy(this->name, name);
     }
-    ~Entity()
+    virtual ~Entity()
     {
-        if (connectionsCount != 0) {
+        if (connectionsCount != 0)
+        {
             delete[]connections;
         }
-        if (statusesCount != 0) {
-            for (int i = 0; i < statusesCount; i++) {
+        if (statusesCount != 0)
+        {
+            for (int i = 0; i < statusesCount; i++)
+            {
                 delete statuses[i];
             }
             delete[]statuses;

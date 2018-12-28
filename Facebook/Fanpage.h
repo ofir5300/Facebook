@@ -21,7 +21,8 @@ class Status;
 
 using namespace std;
 
-class Fanpage   : public Entity
+
+class Fanpage : public Entity
 {
 private:
     int         fansCount = 0;
@@ -30,7 +31,6 @@ public:
     //constructors
     Fanpage(char* name) :Entity(name) {}
     virtual bool addFan(Member* fan);
-
 };
 
 #endif /* Fanpage_h */
