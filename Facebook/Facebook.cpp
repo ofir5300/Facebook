@@ -3,10 +3,10 @@
 //  Facebook
 //
 //  Created by Ilan Kushnir on 25/11/18.
-//  Copyright © 2018 Ilan Kushnir. All rights reserved.
+//  Copyright � 2018 Ilan Kushnir. All rights reserved.
 //
 
-#include "Facebook.hpp"
+#include "Facebook.h"
 
 void Facebook::displayMenu()
 {
@@ -29,7 +29,7 @@ void Facebook::runFunction(int funcNum)
 {
     switch (funcNum) {
         case 1:
-            addMember();    
+            addMember();
             break;
         case 2:
             addFanpage();
@@ -63,11 +63,11 @@ void Facebook::runFunction(int funcNum)
             break;
     }
     
-
+    
 }
 
 
-void Facebook:: displayStatuses()
+void Facebook::displayStatuses()
 {
     int choice = 0;
     char name[NAME_MAX_SIZE];
@@ -80,20 +80,19 @@ void Facebook:: displayStatuses()
         cin >> choice;
     }
     
-    if(choice == 1)
+    if (choice == 1)
     {
         do
         {
-            cout << "Please enter member name\n" ;
+            cout << "Please enter member name\n";
             cin.ignore();
             cin.getline(name, NAME_MAX_SIZE);
-        }
-        while(findMember(name) == nullptr);
+        } while (findMember(name) == nullptr);
         
         Member* member = findMember(name);
         Status** statuses = member->getStatuses();
         
-        for(int i = 0 ; i < member->getStatusesCount() ; i++)
+        for (int i = 0; i < member->getStatusesCount(); i++)
         {
             statuses[i]->printStatus();
         }
@@ -102,48 +101,47 @@ void Facebook:: displayStatuses()
     {
         do
         {
-            cout << "Please enter fanpage name\n" ;
+            cout << "Please enter fanpage name\n";
             cin.ignore();
             cin.getline(name, NAME_MAX_SIZE);
-        }
-        while(findFanpage(name) == nullptr);
+        } while (findFanpage(name) == nullptr);
         
         Fanpage* fanpage = findFanpage(name);
         Status** statuses = fanpage->getStatuses();
         
-        for(int i = 0 ; i < fanpage->getStatusesCount() ; i++)
+        for (int i = 0; i < fanpage->getStatusesCount(); i++)
         {
             statuses[i]->printStatus();
         }
     }
 }
 
-void Facebook:: displayAllMembers()
+void Facebook::displayAllMembers()
 {
-    if(members == nullptr)
-        cout << "There are no members subscriptions\n" ;
+    if (members == nullptr)
+        cout << "There are no members subscriptions\n";
     
-    for(int i = 0 ; i < membersCount; i++)
+    for (int i = 0; i < membersCount; i++)
     {
         members[i]->printMember();
     }
     
 }
 
-void Facebook:: displayAllMembersAndFanpages()
+void Facebook::displayAllMembersAndFanpages()
 {
     displayAllMembers();
     
-    if(fanpages == nullptr)
-        cout << "\nThere are no fanpages subscriptions\n" ;
+    if (fanpages == nullptr)
+        cout << "\nThere are no fanpages subscriptions\n";
     
-    for(int i = 0 ; i < fanpageCount ; i++)
+    for (int i = 0; i < fanpageCount; i++)
     {
         fanpages[i]->printFanpage();
     }
 }
 
-void Facebook:: displayAllMembersOfFanpageOrMember()
+void Facebook::displayAllMembersOfFanpageOrMember()
 {
     int choice = 0;
     char name[NAME_MAX_SIZE];
@@ -156,20 +154,19 @@ void Facebook:: displayAllMembersOfFanpageOrMember()
         cin >> choice;
     }
     
-    if(choice == 1)
+    if (choice == 1)
     {
         do
         {
-            cout << "Please enter member name\n" ;
+            cout << "Please enter member name\n";
             cin.ignore();
             cin.getline(name, NAME_MAX_SIZE);
-        }
-        while(findMember(name) == nullptr);
+        } while (findMember(name) == nullptr);
         
         Member* member = findMember(name);          // prints "member founds twice"
         Member** friends = member->getFriends();
         
-        for(int i = 0 ; i < member->getFriendsCount() ; i++)
+        for (int i = 0; i < member->getFriendsCount(); i++)
         {
             friends[i]->printMember();
         }
@@ -178,16 +175,15 @@ void Facebook:: displayAllMembersOfFanpageOrMember()
     {
         do
         {
-            cout << "Please enter fanpage name\n" ;
+            cout << "Please enter fanpage name\n";
             cin.ignore();
             cin.getline(name, NAME_MAX_SIZE);
-        }
-        while(findFanpage(name) == nullptr);
+        } while (findFanpage(name) == nullptr);
         
         Fanpage* fanpage = findFanpage(name);
         Member** fans = fanpage->getFans();
         
-        for(int i = 0 ; i < fanpage->getFansCount() ; i++)
+        for (int i = 0; i < fanpage->getFansCount(); i++)
         {
             fans[i]->printMember();
         }
@@ -204,14 +200,14 @@ bool Facebook::addMember()
     cin.ignore();
     cin.getline(name, NAME_MAX_SIZE);
     cout << "Please enter the member's birthdate\n"
-         << "in the following format: dd/mm/yyyy\n";
+    << "in the following format: dd/mm/yyyy\n";
     cin >> date;
     Date* birthdate = new Date(date);
     
     Member* newMember = new Member(name, birthdate);
     
     if (membersArrSize == 0) {
-        members = new Member* [INITIAL_ARR_DYNAMIC_SIZE];
+        members = new Member*[INITIAL_ARR_DYNAMIC_SIZE];
         membersArrSize = INITIAL_ARR_DYNAMIC_SIZE;
         membersCount = 0;
     }
@@ -219,9 +215,9 @@ bool Facebook::addMember()
     {
         Member** temp = members;
         membersArrSize *= 2;
-        members = new Member* [membersArrSize];
+        members = new Member*[membersArrSize];
         memcpy(members, temp, sizeof(Member*) * membersCount);
-        delete []temp;
+        delete[]temp;
     }
     
     members[membersCount++] = newMember;
@@ -239,7 +235,7 @@ bool Facebook::addFanpage()
     Fanpage* newFanepage = new Fanpage(name);
     
     if (fanpageArrSize == 0) {
-        fanpages = new Fanpage* [INITIAL_ARR_DYNAMIC_SIZE];
+        fanpages = new Fanpage*[INITIAL_ARR_DYNAMIC_SIZE];
         fanpageArrSize = INITIAL_ARR_DYNAMIC_SIZE;
         fanpageCount = 0;
     }
@@ -247,7 +243,7 @@ bool Facebook::addFanpage()
     {
         Fanpage** temp = fanpages;
         fanpageArrSize *= 2;
-        fanpages = new Fanpage* [fanpageArrSize];
+        fanpages = new Fanpage*[fanpageArrSize];
         memcpy(fanpages, temp, fanpageCount);
         delete temp;
     }
@@ -295,14 +291,14 @@ bool Facebook::addStatus()
     }
     
     cout << "Choose status type:\n"
-         << "1) Text\n"
-         << "2) Image\n"
-         << "3) Video\n";
+    << "1) Text\n"
+    << "2) Image\n"
+    << "3) Video\n";
     cin >> statusType;
     
     cout << "Enter status:\n";
     cin.ignore();                               // clean the buffer before pulling status text fro the console
-    cin.getline(status,STATUS_MAX_SIZE);
+    cin.getline(status, STATUS_MAX_SIZE);
     
     Status* newStatus = new Status((Status::type)statusType, status);
     
@@ -324,7 +320,7 @@ Member* Facebook::findMember(char* name)
 {
     for (int i = 0; i < membersCount; i++) {
         if (strcmp(name, members[i]->getName()) == 0) {
-//            cout << "--- Member found! ---\n";
+            //            cout << "--- Member found! ---\n";
             return members[i];
         }
     }
@@ -337,7 +333,7 @@ Fanpage* Facebook::findFanpage(char* name)
 {
     for (int i = 0; i < fanpageCount; i++) {
         if (strcmp(name, fanpages[i]->getName()) == 0) {
-//            cout << "--- Fanpage found! ---\n";
+            //            cout << "--- Fanpage found! ---\n";
             return fanpages[i];
         }
     }
@@ -356,14 +352,14 @@ bool Facebook::pair2Members()
     cin.getline(name1, NAME_MAX_SIZE);
     
     m1 = findMember(name1);
-    if (m1 == nullptr) {return false;}
+    if (m1 == nullptr) { return false; }
     
     cout << "Please enter second member's name:\n";
-//    cin.ignore();
+    //    cin.ignore();
     cin.getline(name2, NAME_MAX_SIZE);
     
     m2 = findMember(name2);
-    if (m2 == nullptr) {return false;}
+    if (m2 == nullptr) { return false; }
     
     m1->addFriend(m2);
     m2->addFriend(m1);
@@ -381,14 +377,14 @@ bool Facebook::pairFanToFanpage()
     cin.getline(memberName, NAME_MAX_SIZE);
     
     member = findMember(memberName);
-    if (member == nullptr) {return false;}
+    if (member == nullptr) { return false; }
     
     cout << "Please enter fanpage's name:\n";
-//    cin.ignore();
+    //    cin.ignore();
     cin.getline(fanpageName, NAME_MAX_SIZE);
     
     fanpage = findFanpage(fanpageName);
-    if (fanpage == nullptr) {return false;}
+    if (fanpage == nullptr) { return false; }
     
     member->addFanPage(fanpage);
     fanpage->addFan(member);
@@ -413,16 +409,15 @@ void Facebook::printRecentStatuses()
     
     do
     {
-        cout << "Please enter member name:\n" ;
+        cout << "Please enter member name:\n";
         cin.ignore();
         cin.getline(name, NAME_MAX_SIZE);
-    }
-    while(findMember(name) == nullptr);
+    } while (findMember(name) == nullptr);
     
     Member* member = findMember(name);
     Status** recent = member->getAllFriendsRecentStatuses();
     
-    for(int i = 0 ; i < RECENT_STATUSES; i++)
+    for (int i = 0; i < RECENT_STATUSES; i++)
     {
         if (i == 0 && recent == nullptr)    // no statuses at all
         {
@@ -435,6 +430,4 @@ void Facebook::printRecentStatuses()
             break;
     }
 }
-
-
 

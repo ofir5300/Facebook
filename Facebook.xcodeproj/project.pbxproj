@@ -30,20 +30,20 @@
 
 /* Begin PBXFileReference section */
 		D6B9327821AAD683008F5F35 /* Member.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Member.cpp; sourceTree = "<group>"; };
-		D6B9327921AAD683008F5F35 /* Member.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Member.hpp; sourceTree = "<group>"; };
+		D6B9327921AAD683008F5F35 /* Member.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
 		D6B9327B21AAE248008F5F35 /* Status.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Status.cpp; sourceTree = "<group>"; };
-		D6B9327C21AAE248008F5F35 /* Status.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Status.hpp; sourceTree = "<group>"; };
+		D6B9327C21AAE248008F5F35 /* Status.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		D6B9327E21AAE470008F5F35 /* Date.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Date.cpp; sourceTree = "<group>"; };
-		D6B9327F21AAE470008F5F35 /* Date.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Date.hpp; sourceTree = "<group>"; };
+		D6B9327F21AAE470008F5F35 /* Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
 		D6B9328121AAE576008F5F35 /* Time.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Time.cpp; sourceTree = "<group>"; };
-		D6B9328221AAE576008F5F35 /* Time.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Time.hpp; sourceTree = "<group>"; };
+		D6B9328221AAE576008F5F35 /* Time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
 		EFA7194421AAD588005A4F3C /* Facebook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Facebook; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA7194721AAD588005A4F3C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EFA7194E21AAD65C005A4F3C /* Facebook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Facebook.cpp; sourceTree = "<group>"; };
-		EFA7194F21AAD65C005A4F3C /* Facebook.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Facebook.hpp; sourceTree = "<group>"; };
+		EFA7194F21AAD65C005A4F3C /* Facebook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Fanpage.cpp; sourceTree = "<group>"; };
-		EFA7195221AAD8EF005A4F3C /* Fanpage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Fanpage.hpp; sourceTree = "<group>"; };
-		EFA7195521AADA3D005A4F3C /* constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = constants.hpp; sourceTree = "<group>"; };
+		EFA7195221AAD8EF005A4F3C /* Fanpage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fanpage.h; sourceTree = "<group>"; };
+		EFA7195521AADA3D005A4F3C /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,18 +78,18 @@
 			children = (
 				EFA7194721AAD588005A4F3C /* main.cpp */,
 				EFA7194E21AAD65C005A4F3C /* Facebook.cpp */,
-				EFA7194F21AAD65C005A4F3C /* Facebook.hpp */,
+				EFA7194F21AAD65C005A4F3C /* Facebook.h */,
 				D6B9327821AAD683008F5F35 /* Member.cpp */,
-				D6B9327921AAD683008F5F35 /* Member.hpp */,
+				D6B9327921AAD683008F5F35 /* Member.h */,
 				D6B9327B21AAE248008F5F35 /* Status.cpp */,
-				D6B9327C21AAE248008F5F35 /* Status.hpp */,
+				D6B9327C21AAE248008F5F35 /* Status.h */,
 				D6B9327E21AAE470008F5F35 /* Date.cpp */,
-				D6B9327F21AAE470008F5F35 /* Date.hpp */,
+				D6B9327F21AAE470008F5F35 /* Date.h */,
 				D6B9328121AAE576008F5F35 /* Time.cpp */,
-				D6B9328221AAE576008F5F35 /* Time.hpp */,
+				D6B9328221AAE576008F5F35 /* Time.h */,
 				EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */,
-				EFA7195221AAD8EF005A4F3C /* Fanpage.hpp */,
-				EFA7195521AADA3D005A4F3C /* constants.hpp */,
+				EFA7195221AAD8EF005A4F3C /* Fanpage.h */,
+				EFA7195521AADA3D005A4F3C /* constants.h */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";

@@ -1,0 +1,19 @@
+﻿  Time.cpp
+  Status.cpp
+\\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(44): warning C4150: deletion of pointer to incomplete type 'Status'; no destructor called
+  \\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(15): note: see declaration of 'Status'
+  Member.cpp
+\\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(44): warning C4150: deletion of pointer to incomplete type 'Status'; no destructor called
+  \\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(15): note: see declaration of 'Status'
+  main.cpp
+\\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(44): warning C4150: deletion of pointer to incomplete type 'Status'; no destructor called
+  \\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(15): note: see declaration of 'Status'
+  Fanpage.cpp
+\\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(44): warning C4150: deletion of pointer to incomplete type 'Status'; no destructor called
+  \\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(15): note: see declaration of 'Status'
+  Facebook.cpp
+\\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(44): warning C4150: deletion of pointer to incomplete type 'Status'; no destructor called
+  \\mac\home\desktop\facebook-ofir\facebook-ofir\fanpage.h(15): note: see declaration of 'Status'
+  Date.cpp
+  Generating Code...
+  Facebook-ofir.vcxproj -> \\Mac\Home\Desktop\Facebook-ofir\Debug\Facebook-ofir.exe

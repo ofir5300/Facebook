@@ -3,10 +3,10 @@
 //  Facebook
 //
 //  Created by Ofir Cohen on 25/11/2018.
-//  Copyright © 2018 Ilan Kushnir. All rights reserved.
+//  Copyright � 2018 Ilan Kushnir. All rights reserved.
 //
 
-#include "Date.hpp"
+#include "Date.h"
 
 char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
 {
@@ -28,7 +28,7 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
         if (length != 10 ||
             dateStr[2] != '/' ||
             dateStr[5] != '/')
-        {   
+        {
             cout << "Please enter a date in the following format: \"dd/mm/yyyy\"\n";
             cin >> dateStr;
             badInput = 1;
@@ -54,7 +54,7 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
 
 void Date::printDate() const
 {
-    cout << dateStr ;
+    cout << dateStr;
 }
 
 
