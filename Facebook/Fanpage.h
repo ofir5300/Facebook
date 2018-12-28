@@ -21,7 +21,7 @@ class Status;
 
 using namespace std;
 
-class Fanpage
+class Fanpage : public Entity
 {
 private:
     char        name[NAME_MAX_SIZE];
@@ -52,7 +52,7 @@ public:
         }
     }
     
-    bool        addFan(Member* fan);
+    virtual bool        addFan(Member* fan);
     Member**    getFans()                   const;
     int         getFansCount();
     Status**    getStatuses()               const;
