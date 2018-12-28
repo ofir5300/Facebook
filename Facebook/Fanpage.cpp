@@ -3,15 +3,15 @@
 //  Facebook
 //
 //  Created by Ilan Kushnir on 25/11/18.
-//  Copyright © 2018 Ilan Kushnir. All rights reserved.
+//  Copyright � 2018 Ilan Kushnir. All rights reserved.
 //
 
-#include "Fanpage.hpp"
+#include "Fanpage.h"
 
 bool Fanpage::addFan(Member* fan)
 {
     if (fans == nullptr) {
-        fans = new Member* [INITIAL_ARR_DYNAMIC_SIZE];
+        fans = new Member*[INITIAL_ARR_DYNAMIC_SIZE];
         fansArrSize = INITIAL_ARR_DYNAMIC_SIZE;
         fansCount = 0;
     }
@@ -19,9 +19,9 @@ bool Fanpage::addFan(Member* fan)
     {
         Member** temp = fans;
         fansArrSize *= 2;
-        fans = new Member* [fansArrSize];
+        fans = new Member*[fansArrSize];
         memcpy(fans, temp, sizeof(Member*) * fansCount);
-        delete []temp;
+        delete[]temp;
     }
     
     fans[fansCount++] = fan;
@@ -49,7 +49,7 @@ int Fanpage::getStatusesCount() const
     return statusesCount;
 }
 
-int Fanpage:: getFansCount()
+int Fanpage::getFansCount()
 {
     return fansCount;
 }
@@ -65,7 +65,7 @@ void Fanpage::printFanpage() const
 bool Fanpage::addStatus(Status* newStatus)
 {
     if (statuses == nullptr) {
-        statuses = new Status* [INITIAL_ARR_DYNAMIC_SIZE];
+        statuses = new Status*[INITIAL_ARR_DYNAMIC_SIZE];
         statusesArrSize = INITIAL_ARR_DYNAMIC_SIZE;
         statusesCount = 0;
     }
@@ -73,7 +73,7 @@ bool Fanpage::addStatus(Status* newStatus)
     {
         Status** temp = statuses;
         statusesArrSize *= 2;
-        statuses = new Status* [statusesArrSize];
+        statuses = new Status*[statusesArrSize];
         memcpy(statuses, temp, sizeof(Status*) * statusesCount);
         delete temp;
     }

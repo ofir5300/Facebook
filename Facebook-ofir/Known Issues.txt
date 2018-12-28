@@ -1,0 +1,3 @@
+This assignment was created and developed on Xcode IDE using Macbook's.
+It had been adjusted, checked and compiled with Visual Studio 2015 on Windows operated pc.
+No known issues recorded related to that. 

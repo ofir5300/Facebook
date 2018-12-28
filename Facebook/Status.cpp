@@ -3,21 +3,21 @@
 //  Facebook
 //
 //  Created by Ofir Cohen on 25/11/2018.
-//  Copyright © 2018 Ilan Kushnir. All rights reserved.
+//  Copyright � 2018 Ilan Kushnir. All rights reserved.
 //
 
-#include "Status.hpp"
+#include "Status.h"
 
-const char* Status:: getContent() const
+const char* Status::getContent() const
 {
     return content;
 }
 
-void Status:: printStatus() const                           
+void Status::printStatus() const
 {
-    cout << "Status posted on " ;
+    cout << "Status posted on ";
     date->printDate();
-    cout << " " ;
+    cout << " ";
     time->printTime();
     cout << "\n[" << typeNames[(int)contentType - 1] << "] : " << content << "\n";
 }
