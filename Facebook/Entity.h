@@ -48,7 +48,7 @@ public:
     bool        addStatus(Status* newStatus);
     Status**    getStatuses()               const;
     int         getStatusesCount()          const;
-    void        printEntity()               const;
+    virtual void        printEntity() const;
     Status**    getRecentStatuses()         const;
     Status*     getMostRecentStatus();
     bool        addConnection(Entity* newConnection);

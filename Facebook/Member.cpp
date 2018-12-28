@@ -8,31 +8,31 @@
 
 #include "Member.h"
 
-Status** Member::getStatuses() const
-{
-    return statuses;
-}
+//Status** Member::getStatuses() const
+//{
+//    return statuses;
+//}
+//
+//int Member::getStatusesCount()
+//{
+//    return statusesCount;
+//}
+//
+//int Member::getFriendsCount()
+//{
+//    return friendsCount;
+//}
 
-int Member::getStatusesCount()
-{
-    return statusesCount;
-}
-
-int Member::getFriendsCount()
-{
-    return friendsCount;
-}
-
-Status** Member::getRecentStatuses() const
-{   // retruns an array of 10 last statuses, or all statuses if less than 10
-    Status** recent = new Status*[(RECENT_STATUSES > statusesCount) ? RECENT_STATUSES : statusesCount];
-    for (int i = 0; i < RECENT_STATUSES && i < statusesCount; i++)
-    {
-        recent[i] = statuses[i];
-    }
-    
-    return recent;
-}
+//Status** Member::getRecentStatuses() const
+//{   // retruns an array of 10 last statuses, or all statuses if less than 10
+//    Status** recent = new Status*[(RECENT_STATUSES > statusesCount) ? RECENT_STATUSES : statusesCount];
+//    for (int i = 0; i < RECENT_STATUSES && i < statusesCount; i++)
+//    {
+//        recent[i] = statuses[i];
+//    }
+//    
+//    return recent;
+//}
 
 
 
@@ -89,11 +89,11 @@ Status** Member::getAllFriendsRecentStatuses() const
     return recentStatuses;
 }
 
-
-Status* Member::getMostRecentStatus()
-{
-    return (statuses == nullptr) ? nullptr : statuses[statusesCount - 1];
-}
+//
+//Status* Member::getMostRecentStatus()
+//{
+//    return (statuses == nullptr) ? nullptr : statuses[statusesCount - 1];
+//}
 
 Status** Member::fetchFriendsStatuses() const
 {   // returns an array of all friends recent statuses (10 or less for each)
@@ -118,22 +118,26 @@ Status** Member::fetchFriendsStatuses() const
 
 bool Member::addFriend(Member* newFriend)
 {   // add an new member to 'friends' array
+//
+//    if (!friendsCount)   // if array is empty
+//    {
+//        friendsArrSize = INITIAL_ARR_DYNAMIC_SIZE;
+//        friends = new Member*[friendsArrSize];
+//    }
+//    else if (friendsCount == friendsArrSize && friendsCount != 0)
+//    {
+//        Member** temp = friends;
+//        friendsArrSize *= 2;
+//        friends = new Member*[friendsArrSize];
+//        memcpy(friends, temp, sizeof(Member*) * friendsCount);
+//    }
+//
+//    friends[friendsCount++] = newFriend;
+//    return true;
     
-    if (!friendsCount)   // if array is empty
-    {
-        friendsArrSize = INITIAL_ARR_DYNAMIC_SIZE;
-        friends = new Member*[friendsArrSize];
-    }
-    else if (friendsCount == friendsArrSize && friendsCount != 0)
-    {
-        Member** temp = friends;
-        friendsArrSize *= 2;
-        friends = new Member*[friendsArrSize];
-        memcpy(friends, temp, sizeof(Member*) * friendsCount);
-    }
     
-    friends[friendsCount++] = newFriend;
-    return true;
+    
+    /// friends count++
 }
 
 bool Member::addFanPage(Fanpage* newFanPage)
@@ -165,10 +169,10 @@ Member**  Member::getFriends() const
     return friends;
 }
 
-char* Member::getName()
-{
-    return name;
-}
+//char* Member::getName()
+//{
+//    return name;
+//}
 
 Date* Member::getBirthDate() const
 {
@@ -176,31 +180,31 @@ Date* Member::getBirthDate() const
 }
 
 
-void Member::printMember() const
+void Member::printEntity() const
 {
-    cout << "\nMember Name: " << name << "\n"
-    << "Birth Date: " << birthDate->getDateStr() << "\n";
+    Entity::printEntity();
+    cout << "Birth Date: " << birthDate->getDateStr() << "\n";
 }
 
-bool Member::addStatus(Status* newStatus)
-{
-    if (statuses == nullptr) {
-        statuses = new Status*[INITIAL_ARR_DYNAMIC_SIZE];
-        statusesArrSize = INITIAL_ARR_DYNAMIC_SIZE;
-        statusesCount = 0;
-    }
-    else if (statusesCount == statusesArrSize)
-    {
-        Status** temp = statuses;
-        statusesArrSize *= 2;
-        statuses = new Status*[statusesArrSize];
-        memcpy(statuses, temp, sizeof(Status*) * statusesCount);
-        delete temp;
-    }
-    
-    statuses[statusesCount++] = newStatus;
-    return true;
-}
+//bool Member::addStatus(Status* newStatus)
+//{
+//    if (statuses == nullptr) {
+//        statuses = new Status*[INITIAL_ARR_DYNAMIC_SIZE];
+//        statusesArrSize = INITIAL_ARR_DYNAMIC_SIZE;
+//        statusesCount = 0;
+//    }
+//    else if (statusesCount == statusesArrSize)
+//    {
+//        Status** temp = statuses;
+//        statusesArrSize *= 2;
+//        statuses = new Status*[statusesArrSize];
+//        memcpy(statuses, temp, sizeof(Status*) * statusesCount);
+//        delete temp;
+//    }
+//
+//    statuses[statusesCount++] = newStatus;
+//    return true;
+//}
 
 
 

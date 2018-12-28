@@ -19,15 +19,15 @@
 class Fanpage;
 class Status;
 
-class Member
+class Member : public Entity
 {
 private:
     //attributes
-    char        name[NAME_MAX_SIZE];
+//    char        name[NAME_MAX_SIZE];
     Date*       birthDate;
-    Status**    statuses = nullptr;
-    int         statusesCount = 0;
-    int         statusesArrSize = 0;
+//    Status**    statuses = nullptr;
+//    int         statusesCount = 0;
+//    int         statusesArrSize = 0;
     Member**    friends = nullptr;
     int         friendsCount = 0;
     int         friendsArrSize = 0;
@@ -80,7 +80,7 @@ public:
     int                 getFriendsCount();
     char*               getName();
     Date*               getBirthDate()     const;
-    void                printMember()      const;
+    virtual void        printEntity()      const override;
 };
 
 

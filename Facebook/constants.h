@@ -9,10 +9,11 @@
 
 #pragma warning(disable:4996)
 
-#include <iostream>
+#include<iostream>
 #include<stdio.h>
 #include<string.h>
 #include<ctime>
+#include<typeinfo>
 
 using namespace std;
 
