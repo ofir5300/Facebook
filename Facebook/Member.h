@@ -10,9 +10,14 @@
 #ifndef __Member_h
 #define __Member_h
 
+#include "Entity.h"
 #include "Date.h"
 #include "Time.h"
 #include "Status.h"
+///////////////////
+
+class Fanpage;
+class Status;
 
 class Member
 {
@@ -65,7 +70,7 @@ public:
     int                 getStatusesCount();
     Status**            getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
     Status**            getAllFriendsRecentStatuses()   const;  // returns an array of the 10 most recent statuses of all member's friends
-    Status* getMostRecentStatus();
+    Status*             getMostRecentStatus();
     Status**            fetchFriendsStatuses()   const;
     bool                addFriend(Member* newFriend);
     bool                addFanPage(Fanpage* newFanPage);
