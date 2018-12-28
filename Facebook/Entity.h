@@ -14,7 +14,7 @@
 #include "Status.h"
 
 class Entity {
-private:
+protected:
     // Attributes
     char        name[NAME_MAX_SIZE];
     Status**    statuses = nullptr;
