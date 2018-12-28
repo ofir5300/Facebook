@@ -9,7 +9,12 @@
 #ifndef __Fanpage_h
 #define __Fanpage_h
 
+#include "Entity.h"
 #include "constants.h"
+/////////////////
+#include "Status.h"
+#include "Date.h"
+#include "Time.h"
 
 class Member;
 class Status;

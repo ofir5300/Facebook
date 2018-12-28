@@ -10,7 +10,10 @@
 #define __Facebook_h
 
 #include "constants.h"
+#include "Entity.h"
 #include "Member.h"
+///////////////
+#include "Fanpage.h"
 
 class Facebook
 {

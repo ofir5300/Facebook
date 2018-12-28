@@ -13,6 +13,7 @@
 		D6950F6F21AF26E500B6C690 /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9327E21AAE470008F5F35 /* Date.cpp */; };
 		D6950F7021AF26E900B6C690 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B9328121AAE576008F5F35 /* Time.cpp */; };
 		D6950F7121AF26ED00B6C690 /* Fanpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7195121AAD8EF005A4F3C /* Fanpage.cpp */; };
+		D6C7436621D64ECC00D01490 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C7436421D64ECC00D01490 /* Entity.cpp */; };
 		EFA7195C21AC2131005A4F3C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFA7194721AAD588005A4F3C /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		D6B9327F21AAE470008F5F35 /* Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
 		D6B9328121AAE576008F5F35 /* Time.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Time.cpp; sourceTree = "<group>"; };
 		D6B9328221AAE576008F5F35 /* Time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
+		D6C7436421D64ECC00D01490 /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		D6C7436521D64ECC00D01490 /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		EFA7194421AAD588005A4F3C /* Facebook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Facebook; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA7194721AAD588005A4F3C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EFA7194E21AAD65C005A4F3C /* Facebook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Facebook.cpp; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				EFA7194721AAD588005A4F3C /* main.cpp */,
+				D6C7436421D64ECC00D01490 /* Entity.cpp */,
+				D6C7436521D64ECC00D01490 /* Entity.h */,
 				EFA7194E21AAD65C005A4F3C /* Facebook.cpp */,
 				EFA7194F21AAD65C005A4F3C /* Facebook.h */,
 				D6B9327821AAD683008F5F35 /* Member.cpp */,
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C7436621D64ECC00D01490 /* Entity.cpp in Sources */,
 				D6950F7021AF26E900B6C690 /* Time.cpp in Sources */,
 				D6950F6D21AF26DF00B6C690 /* Member.cpp in Sources */,
 				EFA7195C21AC2131005A4F3C /* main.cpp in Sources */,

@@ -10,19 +10,24 @@
 #ifndef __Member_h
 #define __Member_h
 
+#include "Entity.h"
 #include "Date.h"
 #include "Time.h"
 #include "Status.h"
+///////////////////
 
-class Member
+class Fanpage;
+class Status;
+
+class Member : public Entity
 {
 private:
     //attributes
-    char        name[NAME_MAX_SIZE];
+//    char        name[NAME_MAX_SIZE];
     Date*       birthDate;
-    Status**    statuses = nullptr;
-    int         statusesCount = 0;
-    int         statusesArrSize = 0;
+//    Status**    statuses = nullptr;
+//    int         statusesCount = 0;
+//    int         statusesArrSize = 0;
     Member**    friends = nullptr;
     int         friendsCount = 0;
     int         friendsArrSize = 0;
@@ -65,7 +70,7 @@ public:
     int                 getStatusesCount();
     Status**            getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
     Status**            getAllFriendsRecentStatuses()   const;  // returns an array of the 10 most recent statuses of all member's friends
-    Status* getMostRecentStatus();
+    Status*             getMostRecentStatus();
     Status**            fetchFriendsStatuses()   const;
     bool                addFriend(Member* newFriend);
     bool                addFanPage(Fanpage* newFanPage);
@@ -75,7 +80,7 @@ public:
     int                 getFriendsCount();
     char*               getName();
     Date*               getBirthDate()     const;
-    void                printMember()      const;
+    virtual void        printEntity()      const override;
 };
 
 
