@@ -19,12 +19,17 @@ class Facebook
 {
 private:
     // Attributes
-    Member**    members = nullptr;
-    int         membersCount = 0;
-    int         membersArrSize = 0;
-    Fanpage**   fanpages = nullptr;
-    int         fanpageCount = 0;
-    int         fanpageArrSize = 0;
+    Entity**    connections = nullptr;
+    int         connectionsCount = 0;
+    int         connectionsArrSize = 0;
+    
+//    
+//    Member**    members = nullptr;
+//    int         membersCount = 0;
+//    int         membersArrSize = 0;
+//    Fanpage**   fanpages = nullptr;
+//    int         fanpageCount = 0;
+//    int         fanpageArrSize = 0;
     
 public:
     // Methods

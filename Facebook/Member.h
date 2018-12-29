@@ -10,6 +10,7 @@
 #ifndef __Member_h
 #define __Member_h
 
+#include "Fanpage.h"
 #include "Entity.h"
 #include "Date.h"
 #include "Time.h"
@@ -23,48 +24,31 @@ class Member : public Entity
 {
 private:
     //attributes
-//    char        name[NAME_MAX_SIZE];
+    //    char        name[NAME_MAX_SIZE];
     Date*       birthDate;
-//    Status**    statuses = nullptr;
-//    int         statusesCount = 0;
-//    int         statusesArrSize = 0;
-    Member**    friends = nullptr;
+    //    Status**    statuses = nullptr;
+    //    int         statusesCount = 0;
+    //    int         statusesArrSize = 0;
+    //    Member**    friends = nullptr;
     int         friendsCount = 0;
-    int         friendsArrSize = 0;
-    Fanpage**   fanPages = nullptr;
+    //    int         friendsArrSize = 0;
+    //    Fanpage**   fanPages = nullptr;
     int         fanPagesCount = 0;
-    int         fanPagesArrSize = 0;
+    //    int         fanPagesArrSize = 0;
     
     
 public:
     // Constructor, Distructor
-    Member(char* name, Date* birthDate)
+    Member(char* name, Date* birthDate) : Entity(name)
     {
-        strcpy(this->name, name);
         this->birthDate = birthDate;
     }
     
     ~Member()
     {
-        if (friendsCount != 0)
-        {
-            delete[]friends;
-        }
-        
-        if (fanPagesCount != 0)
-        {
-            delete[]fanPages;
-        }
-        
-        if (statusesCount != 0)
-        {
-            for (int i = 0; i < statusesCount; i++)
-            {
-                delete statuses[i];
-            }
-            delete[]statuses;
-        }
+        delete birthDate;
     }
+    
     // Methods
     Status**            getStatuses()            const;
     int                 getStatusesCount();
@@ -86,21 +70,3 @@ public:
 
 
 #endif /* Member_h */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
