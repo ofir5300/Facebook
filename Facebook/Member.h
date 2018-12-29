@@ -10,6 +10,7 @@
 #ifndef __Member_h
 #define __Member_h
 
+#include "Fanpage.h"
 #include "Entity.h"
 #include "Date.h"
 #include "Time.h"

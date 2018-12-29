@@ -8,6 +8,7 @@
 
 #include "Member.h"
 
+
 //Status** Member::getStatuses() const
 //{
 //    return statuses;
@@ -134,7 +135,7 @@ Fanpage** Member::getFanPages() const
 
     for (int i=0; (i < connectionsCount) && (counter < fanPagesCount); i++) {
         Entity* currConnection = connections[i];
-        if (currConnection && (typeid(currConnection) == typeid(Fanpage*))) {
+        if (currConnection && (typeid(*currConnection) == typeid(Fanpage))) {
             fanPages[counter++] = (Fanpage*)connections[i];
         }
     }
