@@ -30,7 +30,6 @@ public:
     //constructors
     Fanpage(char* name) :Entity(name) {}
     virtual bool addFan(Member* fan);
-
 };
 
 #endif /* Fanpage_h */
