@@ -10,7 +10,6 @@
 #ifndef __Member_h
 #define __Member_h
 
-#include "Fanpage.h"
 #include "Entity.h"
 #include "Date.h"
 #include "Time.h"
@@ -29,26 +28,43 @@ private:
 //    Status**    statuses = nullptr;
 //    int         statusesCount = 0;
 //    int         statusesArrSize = 0;
-//    Member**    friends = nullptr;
+    Member**    friends = nullptr;
     int         friendsCount = 0;
-//    int         friendsArrSize = 0;
-//    Fanpage**   fanPages = nullptr;
+    int         friendsArrSize = 0;
+    Fanpage**   fanPages = nullptr;
     int         fanPagesCount = 0;
-//    int         fanPagesArrSize = 0;
+    int         fanPagesArrSize = 0;
     
     
 public:
     // Constructor, Distructor
-    Member(char* name, Date* birthDate) : Entity(name)
+    Member(char* name, Date* birthDate)
     {
+        strcpy(this->name, name);
         this->birthDate = birthDate;
     }
     
     ~Member()
     {
-        delete birthDate;
+        if (friendsCount != 0)
+        {
+            delete[]friends;
+        }
+        
+        if (fanPagesCount != 0)
+        {
+            delete[]fanPages;
+        }
+        
+        if (statusesCount != 0)
+        {
+            for (int i = 0; i < statusesCount; i++)
+            {
+                delete statuses[i];
+            }
+            delete[]statuses;
+        }
     }
-    
     // Methods
     Status**            getStatuses()            const;
     int                 getStatusesCount();

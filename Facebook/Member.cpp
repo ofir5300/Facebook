@@ -8,7 +8,6 @@
 
 #include "Member.h"
 
-
 //Status** Member::getStatuses() const
 //{
 //    return statuses;
@@ -39,124 +38,141 @@
 
 Status** Member::getAllFriendsRecentStatuses() const
 {
-//    Status* MostRecentStatusTempPtr = nullptr;
-//    int i, j, currRecentIndex = 0, compareResult;
-//
-//    // creating friend's statuses indices tracking
-//    int* statusIndices = new int(friendsCount);
-//    for (i = 0; i < friendsCount; i++)
-//        statusIndices[i] = (friends[i]->getStatusesCount()) - 1;
-//
-//    // initialising recent statuses arr
-//    Status** recentStatuses = new Status*[RECENT_STATUSES];
-//    for (i = 0; i < RECENT_STATUSES; i++)
-//        recentStatuses[i] = nullptr;
-//
-//    // [ 3 | -1 | 2 | 0 ]
-//
-//    for (i = 0; i < RECENT_STATUSES; i++) {
-//        MostRecentStatusTempPtr = nullptr;
-//        for (j = 0; j < friendsCount; j++) {
-//            if (statusIndices[j] != -1 && MostRecentStatusTempPtr == nullptr)
-//            {   // point on friend 'j' recent status if no status pointed yet
-//                MostRecentStatusTempPtr = friends[j]->getStatuses()[statusIndices[j]];
-//                currRecentIndex = j;
-//            }
-//            else if (statusIndices[j] != -1)
-//            {   // compare pointed status with friends 'j; recent one
-//                compareResult = MostRecentStatusTempPtr->compare(friends[j]->getStatuses()[statusIndices[j]]);
-//
-//                if (compareResult == -1)
-//                { // if friend 'j' status is newer than the current pointed status
-//                    MostRecentStatusTempPtr = friends[j]->getStatuses()[statusIndices[j]];
-//                    currRecentIndex = j;
-//                }
-//            }
-//        }
-//
-//        if (MostRecentStatusTempPtr != nullptr)
-//        {
-//            recentStatuses[i] = MostRecentStatusTempPtr;
-//            statusIndices[currRecentIndex] --;
-//        }
-//    }
-//
-//    if (recentStatuses[0] == nullptr) {
-//        // if there are no friends to this member or no statuses for existing friends
-//        return nullptr;
-//    }
-//
-//    return recentStatuses;
-    return nullptr;
+    Status* MostRecentStatusTempPtr = nullptr;
+    int i, j, currRecentIndex = 0, compareResult;
+    
+    // creating friend's statuses indices tracking
+    int* statusIndices = new int(friendsCount);
+    for (i = 0; i < friendsCount; i++)
+        statusIndices[i] = (friends[i]->getStatusesCount()) - 1;
+    
+    // initialising recent statuses arr
+    Status** recentStatuses = new Status*[RECENT_STATUSES];
+    for (i = 0; i < RECENT_STATUSES; i++)
+        recentStatuses[i] = nullptr;
+    
+    // [ 3 | -1 | 2 | 0 ]
+    
+    for (i = 0; i < RECENT_STATUSES; i++) {
+        MostRecentStatusTempPtr = nullptr;
+        for (j = 0; j < friendsCount; j++) {
+            if (statusIndices[j] != -1 && MostRecentStatusTempPtr == nullptr)
+            {   // point on friend 'j' recent status if no status pointed yet
+                MostRecentStatusTempPtr = friends[j]->getStatuses()[statusIndices[j]];
+                currRecentIndex = j;
+            }
+            else if (statusIndices[j] != -1)
+            {   // compare pointed status with friends 'j; recent one
+                compareResult = MostRecentStatusTempPtr->compare(friends[j]->getStatuses()[statusIndices[j]]);
+                
+                if (compareResult == -1)
+                { // if friend 'j' status is newer than the current pointed status
+                    MostRecentStatusTempPtr = friends[j]->getStatuses()[statusIndices[j]];
+                    currRecentIndex = j;
+                }
+            }
+        }
+        
+        if (MostRecentStatusTempPtr != nullptr)
+        {
+            recentStatuses[i] = MostRecentStatusTempPtr;
+            statusIndices[currRecentIndex] --;
+        }
+    }
+    
+    if (recentStatuses[0] == nullptr) {
+        // if there are no friends to this member or no statuses for existing friends
+        //        cout << "No statuses\n";
+        return nullptr;
+    }
+    
+    return recentStatuses;
 }
+
+//
+//Status* Member::getMostRecentStatus()
+//{
+//    return (statuses == nullptr) ? nullptr : statuses[statusesCount - 1];
+//}
 
 Status** Member::fetchFriendsStatuses() const
 {   // returns an array of all friends recent statuses (10 or less for each)
-//    int size = 0;
-//    for (int i = 0; i < friendsCount; i++)
-//        size += friends[i]->getStatusesCount();
-//
-//
-//    Status** friendsStatuses = new Status*[size];
-//    int counter = 0;
-//
-//    for (int i = 0; i < friendsCount; i++)
-//    {
-//        Status** recent = friends[i]->getRecentStatuses();
-//        for (int j = 0; j < RECENT_STATUSES && j < friends[i]->getStatusesCount(); j++)
-//        {
-//            friendsStatuses[counter++] = recent[j];
-//        }
-//    }
-//    return friendsStatuses;
-    return nullptr;
+    int size = 0;
+    for (int i = 0; i < friendsCount; i++)
+        size += friends[i]->getStatusesCount();
+    
+    
+    Status** friendsStatuses = new Status*[size];
+    int counter = 0;
+    
+    for (int i = 0; i < friendsCount; i++)
+    {
+        Status** recent = friends[i]->getRecentStatuses();
+        for (int j = 0; j < RECENT_STATUSES && j < friends[i]->getStatusesCount(); j++)
+        {
+            friendsStatuses[counter++] = recent[j];
+        }
+    }
+    return friendsStatuses;
 }
 
 bool Member::addFriend(Member* newFriend)
-{
-    addConnection(newFriend);
-    friendsCount++;
+{   // add an new member to 'friends' array
+//
+//    if (!friendsCount)   // if array is empty
+//    {
+//        friendsArrSize = INITIAL_ARR_DYNAMIC_SIZE;
+//        friends = new Member*[friendsArrSize];
+//    }
+//    else if (friendsCount == friendsArrSize && friendsCount != 0)
+//    {
+//        Member** temp = friends;
+//        friendsArrSize *= 2;
+//        friends = new Member*[friendsArrSize];
+//        memcpy(friends, temp, sizeof(Member*) * friendsCount);
+//    }
+//
+//    friends[friendsCount++] = newFriend;
+//    return true;
     
-    return true;
+    
+    
+    /// friends count++
 }
 
 bool Member::addFanPage(Fanpage* newFanPage)
 {
-    addConnection((Entity*)newFanPage);
-    fanPagesCount++;
+    if (!fanPagesCount)
+    {
+        fanPagesArrSize = INITIAL_ARR_DYNAMIC_SIZE;
+        fanPages = new Fanpage*[fanPagesArrSize];
+    }
+    else if (fanPagesCount == fanPagesArrSize && fanPagesCount != 0)
+    {
+        Fanpage** temp = fanPages;
+        fanPagesArrSize *= 2;
+        fanPages = new Fanpage*[fanPagesArrSize];
+        memcpy(fanPages, temp, sizeof(Fanpage*) * fanPagesCount);
+    }
     
+    fanPages[fanPagesCount++] = newFanPage;
     return true;
 }
 
 Fanpage** Member::getFanPages() const
 {
-    Fanpage** fanPages = (fanPagesCount)? new Fanpage*[fanPagesCount] : nullptr;
-    int counter = 0;
-
-    for (int i=0; (i < connectionsCount) && (counter < fanPagesCount); i++) {
-        Entity* currConnection = connections[i];
-        if (currConnection && (typeid(*currConnection) == typeid(Fanpage))) {
-            fanPages[counter++] = (Fanpage*)connections[i];
-        }
-    }
-    
     return fanPages;
 }
 
 Member**  Member::getFriends() const
 {
-    Member** friends = (friendsCount)? new Member*[friendsCount] : nullptr;
-    int counter = 0;
-    
-    for (int i=0; (i < connectionsCount) && (counter < friendsCount); i++) {
-        Entity* currConnection = connections[i];
-        if (currConnection && (typeid(*currConnection) == typeid(Member))) {
-            friends[counter++] = (Member*)connections[i];
-        }
-    }
-    
     return friends;
 }
+
+//char* Member::getName()
+//{
+//    return name;
+//}
 
 Date* Member::getBirthDate() const
 {
@@ -169,6 +185,26 @@ void Member::printEntity() const
     Entity::printEntity();
     cout << "Birth Date: " << birthDate->getDateStr() << "\n";
 }
+
+//bool Member::addStatus(Status* newStatus)
+//{
+//    if (statuses == nullptr) {
+//        statuses = new Status*[INITIAL_ARR_DYNAMIC_SIZE];
+//        statusesArrSize = INITIAL_ARR_DYNAMIC_SIZE;
+//        statusesCount = 0;
+//    }
+//    else if (statusesCount == statusesArrSize)
+//    {
+//        Status** temp = statuses;
+//        statusesArrSize *= 2;
+//        statuses = new Status*[statusesArrSize];
+//        memcpy(statuses, temp, sizeof(Status*) * statusesCount);
+//        delete temp;
+//    }
+//
+//    statuses[statusesCount++] = newStatus;
+//    return true;
+//}
 
 
 

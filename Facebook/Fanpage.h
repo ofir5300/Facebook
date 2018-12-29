@@ -21,8 +21,7 @@ class Status;
 
 using namespace std;
 
-
-class Fanpage : public Entity
+class Fanpage   : public Entity
 {
 private:
     int         fansCount = 0;
