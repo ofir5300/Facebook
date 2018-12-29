@@ -18,6 +18,7 @@
 ///////////////////
 
 class Fanpage;
+class Entity;
 class Status;
 
 class Member : public Entity

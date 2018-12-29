@@ -25,10 +25,10 @@ private:
     
 //    
 //    Member**    members = nullptr;
-//    int         membersCount = 0;
+    int         membersCount = 0;
 //    int         membersArrSize = 0;
 //    Fanpage**   fanpages = nullptr;
-//    int         fanpageCount = 0;
+    int         fanpageCount = 0;
 //    int         fanpageArrSize = 0;
     
 public:
