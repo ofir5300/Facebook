@@ -11,11 +11,10 @@
 #define __Member_h
 
 #include "Fanpage.h"
-//#include "Entity.h"
-//#include "Date.h"
-//#include "Time.h"
+#include "Entity.h"
+#include "Date.h"
+#include "Time.h"
 #include "Status.h"
-///////////////////
 
 
 class Member : public Entity

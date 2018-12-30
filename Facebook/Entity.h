@@ -10,7 +10,6 @@
 #define Entity_hpp
 
 #include "constants.h"
-
 #include "Status.h"
 
 class Entity {
