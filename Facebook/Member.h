@@ -11,15 +11,12 @@
 #define __Member_h
 
 #include "Fanpage.h"
-#include "Entity.h"
-#include "Date.h"
-#include "Time.h"
+//#include "Entity.h"
+//#include "Date.h"
+//#include "Time.h"
 #include "Status.h"
 ///////////////////
 
-class Fanpage;
-class Entity;
-class Status;
 
 class Member : public Entity
 {
@@ -51,19 +48,13 @@ public:
     }
     
     // Methods
-    Status**            getStatuses()            const;
-    int                 getStatusesCount();
-    Status**            getRecentStatuses()      const;    // using getStatuses() to fetch 10 (or less) recent statuses
-    Status**            getAllFriendsRecentStatuses()   const;  // returns an array of the 10 most recent statuses of all member's friends
-    Status*             getMostRecentStatus();
+    Status**            getAllFriendsRecentStatuses()   const;
     Status**            fetchFriendsStatuses()   const;
     bool                addFriend(Member* newFriend);
     bool                addFanPage(Fanpage* newFanPage);
-    bool                addStatus(Status* newStatus);
     Fanpage**           getFanPages()      const;
     Member**            getFriends()       const;
     int                 getFriendsCount();
-    char*               getName();
     Date*               getBirthDate()     const;
     virtual void        printEntity()      const override;
 };

@@ -327,7 +327,7 @@ Member* Facebook::findMember(char* name)
     for (int i = 0; i < connectionsCount; i++) {
         if (typeid(*connections[i]) == typeid(Member) && strcmp(name, connections[i]->getName()) == 0) {
             //            cout << "--- Member found! ---\n";
-            return (Member*)connections[i];
+            return (Member*)(connections[i]);
         }
     }
     
@@ -340,7 +340,7 @@ Fanpage* Facebook::findFanpage(char* name)
     for (int i = 0; i < connectionsCount; i++) {
         if (typeid(*connections[i]) == typeid(Fanpage) && strcmp(name, connections[i]->getName()) == 0) {
             //            cout << "--- Member found! ---\n";
-            return (Fanpage*)connections[i];
+            return (Fanpage*)(connections[i]);
         }
     }
     
