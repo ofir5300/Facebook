@@ -18,7 +18,8 @@ private:
 	int     hours;//= 0;
 	int     minutes;//= 0;
 	int     seconds;//= 0;
-	char    timeStr[9] = { 0 };
+	//char    timeStr[9] = { 0 };
+	string	timeStr;// = { 0 };
 
 public:
 	// Constructors
@@ -33,6 +34,7 @@ public:
 		minutes = now->tm_min;
 		seconds = now->tm_sec;
 
+		timeStr.reserve(9);
 		timeStr[0] = hours / 10 + '0';
 		timeStr[1] = hours % 10 + '0';
 		timeStr[2] = ':';
@@ -50,7 +52,7 @@ public:
 	int     getHours()      const { return hours; }
 	int     getMinutes()    const { return minutes; }
 	int     getSeconds()    const { return seconds; }
-	char*   getTimeStr() { return timeStr; }
+	string&   getTimeStr() { return timeStr; }
 	void    printTime()     const;
 	int     compare(Time* other);
 };

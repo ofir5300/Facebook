@@ -20,19 +20,20 @@ class Status
 public:
 	// Methods
 	enum type { Text = 1, Image = 2, Video = 3, Text_Image = 4, Text_Video = 5 };
-	char* typeNames[5] = { "Text", "Image", "Video", "Text & Image", "Text & Video" };
+	string typeNames[5] = { "Text", "Image", "Video", "Text & Image", "Text & Video" };
 
-	Status(type contentType, char* content)
+	Status(type contentType, const string& content)
 	{
 		this->date = new Date();
 		this->time = new Time();
 		this->contentType = contentType;
-		strcpy(this->content, content);
+		//strcpy(this->content, content);
+		this->content = content;
 	}
 	const Date* getDate()       const { return date; }
 	const Time* getTime()       const { return time; }
 	const type  getType()       const { return contentType; }
-	const char* getContent()    const;
+	const string getContent()    const;
 	void        printStatus()   const;
 	int			compare(Status* other);
 	bool		operator==(const Status& other) const;
@@ -40,10 +41,11 @@ public:
 
 private:
 	// Attributes
-	Date*    date;
-	Time*    time;
+	Date*   date;
+	Time*   time;
 	type    contentType;
-	char    content[STATUS_MAX_SIZE] = "";
+	//char  content[STATUS_MAX_SIZE] = "";
+	string  content;
 };
 
 #endif /* Status_h */

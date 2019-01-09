@@ -3,7 +3,7 @@
 //  Facebook
 //
 //  Created by Ofir Cohen on 25/11/2018.
-//  Copyright © 2018 Ilan Kushnir. All rights reserved.
+//  Copyright ï¿½ 2018 Ilan Kushnir. All rights reserved.
 //
 
 #include "Member.h"
@@ -101,6 +101,7 @@ Fanpage** Member::getFanPages() const
 
 	for (int i = 0; (i < connectionsCount) && (counter < fanPagesCount); i++) {
 		Entity* currConnection = connections[i];
+        
 		if (currConnection && (typeid(*currConnection) == typeid(Fanpage))) {
 			fanPages[counter++] = (Fanpage*)connections[i];
 		}

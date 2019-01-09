@@ -8,7 +8,7 @@
 
 #include "Date.h"
 
-char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
+string& Date::fixInput(string& dateStr)  //format: dd/mm/yyyy
 {
 	int day, month, year, length, badInput = 0;
 
@@ -22,7 +22,8 @@ char* Date::fixInput(char* dateStr)  //format: dd/mm/yyyy
 		year += (dateStr[7] - '0') * 100;
 		year += (dateStr[6] - '0') * 1000;
 
-		length = (int)strlen(dateStr);
+		length = dateStr.size();
+		//length = (int)strlen(dateStr);
 
 		if (length != 10 ||
 			dateStr[2] != '/' ||

@@ -45,8 +45,8 @@ public:
 	void displayAllMembersOfFanpageOrMember();
 	void exitFacebook();
 
-	Member*     findMember(char* name);
-	Fanpage*    findFanpage(char* name);
+	Member*     findMember(const string& name);
+	Fanpage*    findFanpage(const string& name);
 	void		printRecentStatuses();
 
 };

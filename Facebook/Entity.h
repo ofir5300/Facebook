@@ -3,7 +3,7 @@
 //  Facebook
 //
 //  Created by Ofir Cohen on 28/12/2018.
-//  Copyright © 2018 Ilan Kushnir. All rights reserved.
+//  Copyright ï¿½ 2018 Ilan Kushnir. All rights reserved.
 //
 
 #ifndef __Entity_h
@@ -17,7 +17,8 @@
 class Entity {
 protected:
 	// Attributes
-	char        name[NAME_MAX_SIZE];
+	//char        name[NAME_MAX_SIZE];
+	string		name;
 	Status**    statuses = nullptr;
 	int         statusesCount = 0;
 	int         statusesArrSize = 0;
@@ -26,9 +27,9 @@ protected:
 	int         connectionsArrSize = 0;
 
 public:
-	Entity(char* name)
+	Entity(const string& name)
 	{
-		strcpy(this->name, name);
+		this->name = name;
 	}
 	~Entity()
 	{
@@ -43,7 +44,7 @@ public:
 		}
 	}
 
-	char*       getName();
+	string      getName();
 	Entity**    getConnections()                   const;
 	int         getConnectionsCount() const;
 	bool        addStatus(Status* newStatus);

@@ -14,6 +14,7 @@
 #include<string.h>
 #include<ctime>
 #include<typeinfo>
+#include<string>
 
 using namespace std;
 

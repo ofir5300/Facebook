@@ -8,7 +8,7 @@
 
 #include "Status.h"
 
-const char* Status::getContent() const
+const string Status::getContent() const
 {
 	return content;
 }
@@ -34,7 +34,7 @@ int Status::compare(Status* other)
 
 bool Status::operator==(const Status & other) const
 {
-	return (strcmp(this->content, other.getContent()) == 0) && (this->contentType == other.getType());
+	return (content == other.getContent()) && (this->contentType == other.getType());
 }
 
 bool Status::operator!=(const Status & other) const

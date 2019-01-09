@@ -53,7 +53,7 @@ bool Entity::addConnection(Entity* newConnection)
 	return true;
 }
 
-char* Entity::getName()
+string Entity::getName()
 {
 	return name;
 }

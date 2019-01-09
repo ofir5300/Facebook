@@ -18,7 +18,8 @@ private:
 	int day;
 	int month;
 	int year;
-	char dateStr[11];  //format: dd/mm/yyyy
+	//char dateStr[11];  //format: dd/mm/yyyy
+	string dateStr;
 public:
 	//constructors
 
@@ -33,6 +34,7 @@ public:
 		month = now->tm_mon + 1;
 		year = now->tm_year + 1900;
 
+		dateStr.reserve(11);
 		dateStr[0] = day / 10 + '0';
 		dateStr[1] = day % 10 + '0';
 		dateStr[2] = '/';
@@ -48,11 +50,12 @@ public:
 	}
 
 
-	Date(char* dateStr)
+	Date(string& dateStr)
 	{
 		fixInput(dateStr);
 
-		strcpy(this->dateStr, dateStr);
+		//strcpy(this->dateStr, dateStr);
+		this->dateStr = dateStr;
 
 		day = dateStr[1] - '0';
 		day += (dateStr[0] - '0') * 10;
@@ -68,9 +71,9 @@ public:
 	int     getDay()        const { return day; }
 	int     getMonth()      const { return month; }
 	int     getYear()       const { return year; }
-	char*   getDateStr() { return dateStr; }
+	string&   getDateStr() { return dateStr; }
 	void    printDate()     const;
-	char*   fixInput(char* dateStr);
+	string&   fixInput(string& dateStr);
 	int     compare(Date* other);
 };
 

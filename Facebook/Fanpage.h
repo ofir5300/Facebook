@@ -27,7 +27,7 @@ private:
 
 public:
 	//constructors
-	Fanpage(char* name) :Entity(name) {}
+	Fanpage(const string& name) :Entity(name) {}
 	virtual bool addFan(Member* fan);
 	Fanpage& operator+=(Member& other);
 

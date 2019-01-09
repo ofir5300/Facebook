@@ -29,7 +29,7 @@ private:
 
 public:
 	// Constructor, Distructor
-	Member(char* name, Date* birthDate) : Entity(name)
+	Member(const string& name, Date* birthDate) : Entity(name)
 	{
 		this->birthDate = birthDate;
 	}
