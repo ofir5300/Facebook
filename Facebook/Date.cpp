@@ -22,7 +22,7 @@ string& Date::fixInput(string& dateStr)  //format: dd/mm/yyyy
 		year += (dateStr[7] - '0') * 100;
 		year += (dateStr[6] - '0') * 1000;
 
-		length = dateStr.size();
+		length = (int)dateStr.size();
 		//length = (int)strlen(dateStr);
 
 		if (length != 10 ||

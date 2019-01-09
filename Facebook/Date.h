@@ -33,19 +33,34 @@ public:
 		day = now->tm_mday;
 		month = now->tm_mon + 1;
 		year = now->tm_year + 1900;
-
+		
 		dateStr.reserve(11);
-		dateStr[0] = day / 10 + '0';
-		dateStr[1] = day % 10 + '0';
+		dateStr.push_back((day / 10) + '0');
+		dateStr.push_back((day % 10) + '0');
+		dateStr.push_back('/');
+		dateStr.push_back((month / 10) + '0');
+		dateStr.push_back((month % 10) + '0');
+		dateStr.push_back('/');
+		dateStr.push_back((year / 1000) + '0');
+		dateStr.push_back(((year % 1000) / 100) + '0');
+		dateStr.push_back(((year % 100) / 10) + '0');
+		dateStr.push_back((year % 10) + '0');
+		dateStr.push_back('\0');
+
+		/*
+		dateStr.reserve(11);
+		dateStr[0] = (char)(day / 10) + '0';
+		dateStr[1] = (char)(day % 10) + '0';
 		dateStr[2] = '/';
-		dateStr[3] = month / 10 + '0';
-		dateStr[4] = month % 10 + '0';
+		dateStr[3] = (char)(month / 10) + '0';
+		dateStr[4] = (char)(month % 10) + '0';
 		dateStr[5] = '/';
-		dateStr[6] = year / 1000 + '0';
-		dateStr[7] = (year % 1000) / 100 + '0';
-		dateStr[8] = (year % 100) / 10 + '0';
-		dateStr[9] = year % 10 + '0';
+		dateStr[6] = (char)(year / 1000) + '0';
+		dateStr[7] = (char)((year % 1000) / 100) + '0';
+		dateStr[8] = (char)((year % 100) / 10) + '0';
+		dateStr[9] = (char)(year % 10) + '0';
 		dateStr[10] = '\0';
+		*/
 		//        Date(nowDay, nowMonth, nowYear);
 	}
 

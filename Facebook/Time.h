@@ -35,6 +35,18 @@ public:
 		seconds = now->tm_sec;
 
 		timeStr.reserve(9);
+		
+		timeStr.push_back((hours / 10) + '0');
+		timeStr.push_back((hours % 10) + '0');
+		timeStr.push_back(':');
+		timeStr.push_back((minutes / 10) + '0');
+		timeStr.push_back((minutes % 10) + '0');
+		timeStr.push_back(':');
+		timeStr.push_back((seconds / 10) + '0');
+		timeStr.push_back((seconds % 10) + '0');
+		timeStr.push_back('\0');
+
+		/*
 		timeStr[0] = hours / 10 + '0';
 		timeStr[1] = hours % 10 + '0';
 		timeStr[2] = ':';
@@ -44,6 +56,7 @@ public:
 		timeStr[6] = seconds / 10 + '0';
 		timeStr[7] = seconds % 10 + '0';
 		timeStr[8] = '\0';
+		*/
 		//        Time(nowHours, nowMinutes, nowSeconds);
 	}
 

@@ -15,6 +15,7 @@
 #include<ctime>
 #include<typeinfo>
 #include<string>
+#include<vector>
 
 using namespace std;
 

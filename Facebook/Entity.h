@@ -3,7 +3,7 @@
 //  Facebook
 //
 //  Created by Ofir Cohen on 28/12/2018.
-//  Copyright ï¿½ 2018 Ilan Kushnir. All rights reserved.
+//  Copyright © 2018 Ilan Kushnir. All rights reserved.
 //
 
 #ifndef __Entity_h
@@ -19,12 +19,14 @@ protected:
 	// Attributes
 	//char        name[NAME_MAX_SIZE];
 	string		name;
-	Status**    statuses = nullptr;
-	int         statusesCount = 0;
-	int         statusesArrSize = 0;
-	Entity**    connections = nullptr;
-	int         connectionsCount = 0;
-	int         connectionsArrSize = 0;
+	//Status**    statuses = nullptr;
+	vector<Status*> statuses;
+	//int         statusesCount = 0;
+	//int         statusesArrSize = 0;
+	//Entity**    connections = nullptr;
+	vector<Entity*> connections;
+	//int         connectionsCount = 0;
+	//int         connectionsArrSize = 0;
 
 public:
 	Entity(const string& name)
@@ -33,25 +35,22 @@ public:
 	}
 	~Entity()
 	{
-		if (connectionsCount != 0) {
-			delete[]connections;
-		}
-		if (statusesCount != 0) {
-			for (int i = 0; i < statusesCount; i++) {
-				delete statuses[i];
-			}
-			delete[]statuses;
+		if (statuses.size() != 0) 
+		{
+			vector<Status*>::iterator itr = statuses.begin();
+			vector<Status*>::iterator itrEnd = statuses.end();
+			for (; itr != itrEnd; ++itr)
+				delete *itr;
 		}
 	}
 
 	string      getName();
-	Entity**    getConnections()                   const;
+	vector<Entity*>    getConnections()                   const;
 	int         getConnectionsCount() const;
 	bool        addStatus(Status* newStatus);
-	Status**    getStatuses()               const;
+	vector<Status*>    getStatuses()               const;
 	int         getStatusesCount()          const;
 	virtual void        printEntity() const;
-	Status**    getRecentStatuses()         const;
 	Status*     getMostRecentStatus();
 	bool        addConnection(Entity* newConnection);
 	bool        operator>(const Entity& other) const;
