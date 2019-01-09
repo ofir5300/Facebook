@@ -3,7 +3,7 @@
 //  Facebook
 //
 //  Created by Ilan Kushnir on 25/11/18.
-//  Copyright ï¿½ 2018 Ilan Kushnir. All rights reserved.
+//  Copyright © 2018 Ilan Kushnir. All rights reserved.
 #ifndef __constants_h
 #define __constants_h
 
@@ -24,3 +24,4 @@ using namespace std;
 #define INITIAL_ARR_DYNAMIC_SIZE 10
 
 #endif /* constants_h */
+

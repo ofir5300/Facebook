@@ -3,7 +3,7 @@
 //  Facebook
 //
 //  Created by Ilan Kushnir on 25/11/18.
-//  Copyright ï¿½ 2018 Ilan Kushnir. All rights reserved.
+//  Copyright © 2018 Ilan Kushnir. All rights reserved.
 //
 
 #ifndef __Fanpage_h
@@ -14,21 +14,32 @@
 #include "Status.h"
 #include "Date.h"
 #include "Time.h"
+#include "Member.h"
 
-class Member;
-//class Status;
+//class Member;
 
 using namespace std;
 
-class Fanpage   : public Entity
+class Fanpage : public Entity
 {
 private:
-    int         fansCount = 0;
+	int         fansCount = 0;
 
 public:
-    //constructors
-    Fanpage(char* name) :Entity(name) {}
-    virtual bool addFan(Member* fan);
+	//constructors
+	Fanpage(char* name) :Entity(name) {}
+	virtual bool addFan(Member* fan);
+	Fanpage& operator+=(Member& other);
+
 };
 
 #endif /* Fanpage_h */
+
+
+
+
+
+
+
+
+
