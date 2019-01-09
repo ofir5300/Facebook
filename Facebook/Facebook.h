@@ -22,10 +22,7 @@ class Facebook
 {
 private:
 	// Attributes
-	Entity**    connections = nullptr;
-	int         connectionsCount = 0;
-	int         connectionsArrSize = 0;
-
+	vector<Entity*>    connections;
 	int         membersCount = 0;
 	int         fanpageCount = 0;
 

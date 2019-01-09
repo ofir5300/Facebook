@@ -5,7 +5,6 @@
 //  Created by Ilan Kushnir on 25/11/18.
 //  Copyright © 2018 Ilan Kushnir. All rights reserved.
 //
-
 #include "Facebook.h"
 
 void Facebook::displayMenu()
@@ -90,12 +89,14 @@ void Facebook::displayStatuses()
 		} while (findMember(name) == nullptr);
 
 		Member* member = findMember(name);
-		Status** statuses = member->getStatuses();
+		vector<Status*> statuses = member->getStatuses();
 
-		for (int i = 0; i < member->getStatusesCount(); i++)
-		{
-			statuses[i]->printStatus();
-		}
+		vector<Status*>::iterator itr = statuses.begin();
+		vector<Status*>::iterator itrEnd = statuses.end();
+
+		for (; itr != itrEnd; ++itr)
+			(*itr)->printStatus();
+
 	}
 	else
 	{
@@ -108,24 +109,29 @@ void Facebook::displayStatuses()
 		} while (findFanpage(name) == nullptr);
 
 		Fanpage* fanpage = findFanpage(name);
-		Status** statuses = fanpage->getStatuses();
+		vector<Status*> statuses = fanpage->getStatuses();
 
-		for (int i = 0; i < fanpage->getStatusesCount(); i++)
-		{
-			statuses[i]->printStatus();
-		}
+		vector<Status*>::iterator itr = statuses.begin();
+		vector<Status*>::iterator itrEnd = statuses.end();
+
+		for (; itr != itrEnd; ++itr)
+			(*itr)->printStatus();
 	}
 }
 
 void Facebook::displayAllMembers()
 {
-	if (connections == nullptr || !membersCount)
+	if (connections.empty() || !membersCount)
 		cout << "There are no members subscriptions\n";
-
-	for (int i = 0; i < connectionsCount; i++)
+	else
 	{
-		if (typeid(*connections[i]) == typeid(Member))
-			connections[i]->printEntity();
+		vector<Entity*>::iterator itr = connections.begin();
+		vector<Entity*>::iterator itrEnd = connections.end();
+
+		for (; itr != itrEnd; ++itr) {
+			if (typeid(*(*itr)) == typeid(Member))
+				(*itr)->printEntity();
+		}
 	}
 
 }
@@ -134,13 +140,17 @@ void Facebook::displayAllMembersAndFanpages()
 {
 	displayAllMembers();
 
-	if (connections == nullptr || !fanpageCount)
+	if (connections.empty() || !fanpageCount)
 		cout << "\nThere are no fanpages subscriptions\n";
-
-	for (int i = 0; i < connectionsCount; i++)
+	else
 	{
-		if (typeid(*connections[i]) == typeid(Fanpage))
-			connections[i]->printEntity();
+		vector<Entity*>::iterator itr = connections.begin();
+		vector<Entity*>::iterator itrEnd = connections.end();
+
+		for (; itr != itrEnd; ++itr) {
+			if (typeid(*(*itr)) == typeid(Fanpage))
+				(*itr)->printEntity();
+		}
 	}
 }
 
@@ -169,12 +179,14 @@ void Facebook::displayAllMembersOfFanpageOrMember()
 		} while (findMember(name) == nullptr);
 
 		Member* member = findMember(name);          // prints "member founds twice"
-		Entity** connections = member->getConnections();
+		vector<Entity*> connections = member->getConnections();
 
-		for (int i = 0; i < member->getConnectionsCount(); i++)
-		{
-			if (typeid(*connections[i]) == typeid(Member))
-				connections[i]->printEntity();
+		vector<Entity*>::iterator itr = connections.begin();
+		vector<Entity*>::iterator itrEnd = connections.end();
+
+		for (; itr != itrEnd; ++itr) {
+			if (typeid(*(*itr)) == typeid(Member))
+				(*itr)->printEntity();
 		}
 	}
 	else
@@ -188,12 +200,14 @@ void Facebook::displayAllMembersOfFanpageOrMember()
 		} while (findFanpage(name) == nullptr);
 
 		Fanpage* fanpage = findFanpage(name);
-		Entity** connections = fanpage->getConnections();
+		vector<Entity*> connections = fanpage->getConnections();
 
-		for (int i = 0; i < fanpage->getConnectionsCount(); i++)
-		{
-			if (typeid(*connections[i]) == typeid(Member))
-				connections[i]->printEntity();
+		vector<Entity*>::iterator itr = connections.begin();
+		vector<Entity*>::iterator itrEnd = connections.end();
+
+		for (; itr != itrEnd; ++itr) {
+			if (typeid(*(*itr)) == typeid(Member))
+				(*itr)->printEntity();
 		}
 	}
 
@@ -216,21 +230,7 @@ bool Facebook::addMember()
 
 	Member* newMember = new Member(name, birthdate);
 
-	if (connectionsArrSize == 0) {
-		connections = new Entity*[INITIAL_ARR_DYNAMIC_SIZE];
-		connectionsArrSize = INITIAL_ARR_DYNAMIC_SIZE;
-		connectionsCount = 0;
-	}
-	else if (connectionsCount == connectionsArrSize)
-	{
-		Entity** temp = connections;
-		connectionsArrSize *= 2;
-		connections = new Entity*[connectionsArrSize];
-		memcpy(connections, temp, sizeof(Entity*) * connectionsCount);
-		delete[]temp;
-	}
-
-	connections[connectionsCount++] = newMember;
+	connections.push_back(newMember);
 	membersCount++;
 	return true;
 }
@@ -247,21 +247,7 @@ bool Facebook::addFanpage()
 
 	Fanpage* newFanepage = new Fanpage(name);
 
-	if (connectionsArrSize == 0) {
-		connections = new Entity*[INITIAL_ARR_DYNAMIC_SIZE];
-		connectionsArrSize = INITIAL_ARR_DYNAMIC_SIZE;
-		connectionsCount = 0;
-	}
-	else if (connectionsCount == connectionsArrSize)
-	{
-		Entity** temp = connections;
-		connectionsArrSize *= 2;
-		connections = new Entity*[connectionsArrSize];
-		memcpy(connections, temp, connectionsCount);
-		delete temp;
-	}
-
-	connections[connectionsCount++] = newFanepage;
+	connections.push_back(newFanepage);
 	fanpageCount++;
 	return true;
 }
@@ -270,8 +256,8 @@ bool Facebook::addStatus()
 {
 	int choice = 0; // 1 - member, 2 - fanpage
 	int statusType; // 1 - text, 2 - image, 3 - video, 4 - text & image, 5 - text & video
-	//char status[STATUS_MAX_SIZE];
-	//char name[NAME_MAX_SIZE];
+					//char status[STATUS_MAX_SIZE];
+					//char name[NAME_MAX_SIZE];
 	string status, name;
 	Member* member = nullptr;
 	Fanpage* fanpage = nullptr;
@@ -339,12 +325,13 @@ bool Facebook::addStatus()
 
 Member* Facebook::findMember(const string& name)
 {
-	for (int i = 0; i < connectionsCount; i++) {
-		if (typeid(*connections[i]) == typeid(Member) && name == connections[i]->getName()) {//strcmp(name, connections[i]->getName()) == 0) {
-			//            cout << "--- Member found! ---\n";
-			return (Member*)(connections[i]);
-		}
-	}
+
+	vector<Entity*>::iterator itr = connections.begin();
+	vector<Entity*>::iterator itrEnd = connections.end();
+
+	for (; itr != itrEnd; ++itr)
+		if (typeid(*(*itr)) == typeid(Member) && name == (*itr)->getName())
+			return (Member*)(*itr);
 
 	cout << "--- Member not found ---\n";
 	return nullptr;
@@ -352,12 +339,12 @@ Member* Facebook::findMember(const string& name)
 
 Fanpage* Facebook::findFanpage(const string& name)
 {
-	for (int i = 0; i < connectionsCount; i++) {
-		if (typeid(*connections[i]) == typeid(Fanpage) && name == connections[i]->getName()) {	// strcmp(name, connections[i]->getName()) == 0) {
-			//            cout << "--- Member found! ---\n";
-			return (Fanpage*)(connections[i]);
-		}
-	}
+	vector<Entity*>::iterator itr = connections.begin();
+	vector<Entity*>::iterator itrEnd = connections.end();
+
+	for (; itr != itrEnd; ++itr)
+		if (typeid(*(*itr)) == typeid(Fanpage) && name == (*itr)->getName())
+			return (Fanpage*)(*itr);
 
 	cout << "Fanpage not found\n";
 	return nullptr;
@@ -420,11 +407,12 @@ bool Facebook::pairFanToFanpage()
 
 void Facebook::exitFacebook()
 {
-	for (int i = 0; i < connectionsCount; i++)
-		delete connections[i];
+	vector<Entity*>::iterator itr = connections.begin();
+	vector<Entity*>::iterator itrEnd = connections.end();
 
-	delete connections;
-
+	for (; itr != itrEnd; ++itr) {
+		delete *itr;
+	}
 }
 
 
@@ -442,19 +430,20 @@ void Facebook::printRecentStatuses()
 	} while (findMember(name) == nullptr);
 
 	Member* member = findMember(name);
-	Status** recent = member->getAllFriendsRecentStatuses();
+	vector<Status*> recent;
+	// = member->getAllFriendsRecentStatuses();
 
-	for (int i = 0; i < RECENT_STATUSES; i++)
-	{
-		if (i == 0 && recent == nullptr)    // no statuses at all
-		{
+	vector<Status*>::iterator itr = recent.begin();
+	vector<Status*>::iterator itrEnd = recent.end();
+
+	for (int i = 0; itr != itrEnd && i < RECENT_STATUSES; ++itr) {
+
+		if (i == 0 && recent.empty()) {
 			cout << "There are no statuses yet\n";
 			break;
 		}
-		else if (recent[i] != nullptr)
-			recent[i]->printStatus();
-		else    // no more statuses in feed
-			break;
+
+		(*itr)->printStatus();
+		i++;
 	}
 }
-

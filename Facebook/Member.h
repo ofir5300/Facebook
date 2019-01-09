@@ -40,12 +40,11 @@ public:
 	}
 
 	// Methods
-	Status**            getAllFriendsRecentStatuses()   const;
-	Status**            fetchFriendsStatuses()			const;
+	vector<Status*>     getAllFriendsRecentStatuses()   const;
 	bool                addFriend(Member* newFriend);
 	bool                addFanPage(Fanpage* newFanPage);
-	Fanpage**           getFanPages()					const;
-	Member**            getFriends()					const;
+	vector<Fanpage*>    getFanPages()					const;
+	vector<Member*>		getFriends()					 const;
 	int                 getFriendsCount();
 	Date*               getBirthDate()					const;
 	virtual void        printEntity()					const override;
