@@ -430,8 +430,7 @@ void Facebook::printRecentStatuses()
 	} while (findMember(name) == nullptr);
 
 	Member* member = findMember(name);
-	vector<Status*> recent;
-	// = member->getAllFriendsRecentStatuses();
+	vector<Status*> recent = member->getAllFriendsRecentStatuses();
 
 	vector<Status*>::iterator itr = recent.begin();
 	vector<Status*>::iterator itrEnd = recent.end();

@@ -7,6 +7,8 @@
 //
 
 #include "Fanpage.h"
+#include "Member.h"
+
 
 bool Fanpage::addFan(Member* fan)
 {

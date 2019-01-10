@@ -20,11 +20,11 @@ protected:
 	//char        name[NAME_MAX_SIZE];
 	string		name;
 	//Status**    statuses = nullptr;
+	vector<Entity*> connections;
 	vector<Status*> statuses;
 	//int         statusesCount = 0;
 	//int         statusesArrSize = 0;
 	//Entity**    connections = nullptr;
-	vector<Entity*> connections;
 	//int         connectionsCount = 0;
 	//int         connectionsArrSize = 0;
 

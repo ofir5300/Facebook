@@ -14,9 +14,9 @@
 #include "Status.h"
 #include "Date.h"
 #include "Time.h"
-#include "Member.h"
+//#include "Member.h"
 
-//class Member;
+class Member;	//?
 
 using namespace std;
 

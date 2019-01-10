@@ -7,6 +7,7 @@
 //
 
 #include "Member.h"
+#include "Fanpage.h"
 
 Member& Member::operator+=(Member& other)
 {
@@ -24,11 +25,77 @@ int Member::getFriendsCount()
 vector<Status*> Member::getAllFriendsRecentStatuses() const
 {
 	Status* MostRecentStatusTempPtr = nullptr;
+	Member* memberPtr = nullptr;
 	int i, j, currRecentIndex = 0, compareResult, arrIndex = 0;
 	
 	//creating friend's statuses indices tracking
 	vector<int> statusIndices;
-	vector<Member*> friends = this->getFriends;
+	vector<Entity*>::iterator friendItr = ((vector<Entity*>)connections).begin(), friendItrEnd = ((vector<Entity*>)connections).end();
+
+	for (; friendItr != friendItrEnd; ++friendItr)
+	{
+		memberPtr = dynamic_cast<Member*>(*friendItr);
+		if(memberPtr)
+			statusIndices.push_back(memberPtr->getStatusesCount() - 1);
+	}
+
+
+	///////////////////////////
+	//initialising recent statuses arr
+	vector<int>::iterator indicesItr = statusIndices.begin(), indicesItrEnd = statusIndices.end();
+	vector<Status*> recentStatuses;
+
+	for (i = 0; i < RECENT_STATUSES; i++)
+	{
+		MostRecentStatusTempPtr = nullptr;
+		friendItr = ((vector<Entity*>)connections).begin();
+		for (j = 0 ; indicesItr != indicesItrEnd; ++indicesItr) // check each friends
+		{
+			memberPtr = dynamic_cast<Member*>(*friendItr);
+			while (memberPtr == nullptr)
+			{
+				++friendItr;
+				memberPtr = dynamic_cast<Member*>(*friendItr);
+			}
+
+			if ((*indicesItr) != -1 && MostRecentStatusTempPtr == nullptr)	
+			{
+
+				MostRecentStatusTempPtr = memberPtr->getStatuses()[(*indicesItr)];		
+				currRecentIndex = j;
+			}
+			else if ((*indicesItr) != -1)
+			{
+				compareResult = MostRecentStatusTempPtr->compare(memberPtr->getStatuses()[(*indicesItr)]);
+
+				if (compareResult == -1)
+				{
+					MostRecentStatusTempPtr = memberPtr->getStatuses()[(*indicesItr)];
+					currRecentIndex = j;
+				}
+			}
+			j++;
+			++friendItr;
+		}
+
+		if (MostRecentStatusTempPtr)
+		{
+			recentStatuses.push_back(MostRecentStatusTempPtr);
+			indicesItr = statusIndices.begin();
+			for (i = 0; i < currRecentIndex; i++)
+				++indicesItr;
+			(*indicesItr) -= 1;
+		}
+
+
+	}
+	/*//////////////////// version #2
+	Status* MostRecentStatusTempPtr = nullptr;
+	int i, j, currRecentIndex = 0, compareResult, arrIndex = 0;
+
+	//creating friend's statuses indices tracking
+	vector<int> statusIndices;
+	vector<Member*> friends = this->getFriends();
 	vector<Member*>::iterator itr = friends.begin(), itrEnd = friends.end();
 
 	for (; itr != itrEnd; ++itr)
@@ -46,11 +113,11 @@ vector<Status*> Member::getAllFriendsRecentStatuses() const
 	for (i = 0; i < RECENT_STATUSES; i++)
 	{
 		MostRecentStatusTempPtr = nullptr;
-		for (j = 0 ; indicesItr != indicesItrEnd; ++indicesItr) // check each friends
+		for (j = 0; indicesItr != indicesItrEnd; ++indicesItr) // check each friends
 		{
-			if ((*indicesItr) != -1 && MostRecentStatusTempPtr == nullptr)	//increase J and itr
+			if ((*indicesItr) != -1 && MostRecentStatusTempPtr == nullptr)
 			{
-				MostRecentStatusTempPtr = (*itr)->getStatuses()[(*indicesItr)];		//connection[j]??
+				MostRecentStatusTempPtr = (*itr)->getStatuses()[(*indicesItr)];
 				currRecentIndex = j;
 			}
 			else if ((*indicesItr) != -1)
@@ -75,9 +142,9 @@ vector<Status*> Member::getAllFriendsRecentStatuses() const
 				++indicesItr;
 			(*indicesItr) -= 1;
 		}
-
-
 	}
+
+	/*//////////////////////////////////// version #1
 	/* creating friend's statuses indices tracking
 	int* statusIndices = new int(friendsCount);
 	int* membersInd = new int(friendsCount);
@@ -150,20 +217,9 @@ bool Member::addFanPage(Fanpage* newFanPage)
 
 vector<Fanpage*> Member::getFanPages() const
 {
-	/*
-	Fanpage** fanPages = (fanPagesCount) ? new Fanpage*[fanPagesCount] : nullptr;
-	int counter = 0;
-
-	for (int i = 0; (i < connectionsCount) && (counter < fanPagesCount); i++) {
-		Entity* currConnection = connections[i];
-		if (currConnection && (typeid(*currConnection) == typeid(Fanpage))) {
-			fanPages[counter++] = (Fanpage*)connections[i];
-		}
-	}
-	*/
 	vector<Fanpage*> fanPages;
-	vector<Entity*>::iterator itr = connections.begin();
-	vector<Entity*>::iterator itrEnd = connections.end();
+	vector<Entity*>::iterator itr = ((vector<Entity*>)connections).begin();
+	vector<Entity*>::iterator itrEnd = ((vector<Entity*>)connections).end();
 
 	for (; itr != itrEnd; ++itr)
 	{
@@ -171,37 +227,47 @@ vector<Fanpage*> Member::getFanPages() const
 			fanPages.push_back((Fanpage*)*itr);
 	}
 
+	/*
+	Fanpage** fanPages = (fanPagesCount) ? new Fanpage*[fanPagesCount] : nullptr;
+	int counter = 0;
+
+	for (int i = 0; (i < connectionsCount) && (counter < fanPagesCount); i++) {
+	Entity* currConnection = connections[i];
+	if (currConnection && (typeid(*currConnection) == typeid(Fanpage))) {
+	fanPages[counter++] = (Fanpage*)connections[i];
+	}
+	}
+	*/
 	return fanPages;
 }
 
 vector<Member*>  Member::getFriends() const
 {
+	vector<Member*> friends;
+	vector<Entity*>::iterator itr = ((vector<Entity*>)connections).begin(), itrEnd = ((vector<Entity*>)connections).end();
+	
+	for ( ; itr != itrEnd ; ++itr)
+	{
+		Member* m1 = &(dynamic_cast<Member&>(*(*itr)));
+		//if (typeid(*(*itr)) == typeid(Member))
+		if(m1)
+		{
+			//friends.push_back((Member*)*itr);
+			friends.push_back(m1);
+		}
+	}
+
 	/*
 	Member** friends = (friendsCount) ? new Member*[friendsCount] : nullptr;
 	int counter = 0;
 
 	for (int i = 0; (i < connectionsCount) && (counter < friendsCount); i++) {
-		Entity* currConnection = connections[i];
-		if (currConnection && (typeid(*currConnection) == typeid(Member))) {
-			friends[counter++] = (Member*)connections[i];
-		}
+	Entity* currConnection = connections[i];
+	if (currConnection && (typeid(*currConnection) == typeid(Member))) {
+	friends[counter++] = (Member*)connections[i];
+	}
 	}
 	*/
-	vector<Member*> friends;
-	vector<Entity*>::iterator itr = connections.begin();
-	vector<Entity*>::iterator itrEnd = connections.end();
-
-	//if (connections.empty())
-	//	return nullptr;			//?
-
-	for (; itr != itrEnd; ++itr)
-	{
-		if (typeid(*(*itr)) == typeid(Member))
-		{
-			friends.push_back((Member*)*itr);
-		}
-	}
-
 	return friends;
 }
 
